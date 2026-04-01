@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your name — Portfolio</title>
+    <title>Alessia Obinu — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,7 +14,7 @@
   </head>
   <body>
     <header class="site-header site-header--home">
-      <a class="site-logo" href="index.html">Your name</a>
+      <a class="site-logo" href="index.html">Alessia Obinu</a>
       <nav class="site-nav site-nav--center" aria-label="Page sections">
         <a href="#about">About</a>
         <a href="#work">Work</a>
@@ -22,19 +22,11 @@
     </header>
 
     <main id="top">
-      <section
-        id="about"
-        class="hero hero--split"
-        aria-labelledby="hero-heading"
-        style="
-          --about-bg-quarter: url('images/about-quarter.png');
-          --about-bg-main: url('images/about-main.jpg');
-        "
-      >
+      <section id="about" class="hero hero--split" aria-labelledby="hero-heading">
         <div class="hero__pane hero__pane--quarter" aria-hidden="true"></div>
         <div class="hero__pane hero__pane--main">
           <div class="hero__inner">
-            <h1 id="hero-heading">Hello, I’m <span>your name</span>.</h1>
+            <h1 id="hero-heading">Hello, I’m <span>Alessia Obinu</span>.</h1>
             <p class="tagline">
               Artist, dancer, and maker — welcome to my corner of the web.
             </p>
@@ -58,7 +50,12 @@
         <section id="paintings" class="work-block work-block--paintings" aria-labelledby="paintings-heading">
           <div class="work-block__visual" aria-hidden="true">
             <div class="work-block__visual-inner">
-              <div class="work-block__placeholder"></div>
+              <img
+                class="work-block__photo"
+                src="images/work-paintings.png"
+                alt=""
+                decoding="async"
+              />
             </div>
           </div>
           <div class="work-block__content">
@@ -80,7 +77,12 @@
         <section id="dance" class="work-block work-block--dance" aria-labelledby="dance-heading">
           <div class="work-block__visual" aria-hidden="true">
             <div class="work-block__visual-inner">
-              <div class="work-block__placeholder"></div>
+              <img
+                class="work-block__photo"
+                src="images/work-dance.png"
+                alt=""
+                decoding="async"
+              />
             </div>
           </div>
           <div class="work-block__content">
@@ -101,7 +103,12 @@
         <section id="jewelry" class="work-block work-block--jewelry" aria-labelledby="jewelry-heading">
           <div class="work-block__visual" aria-hidden="true">
             <div class="work-block__visual-inner">
-              <div class="work-block__placeholder"></div>
+              <img
+                class="work-block__photo"
+                src="images/work-jewelry.png"
+                alt=""
+                decoding="async"
+              />
             </div>
           </div>
           <div class="work-block__content">
@@ -122,7 +129,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Your name. All rights reserved.</p>
+      <p>© <span id="year"></span> Alessia Obinu. All rights reserved.</p>
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();

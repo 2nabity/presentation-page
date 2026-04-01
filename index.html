@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your name — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header site-header--home">
+      <a class="site-logo" href="index.html">Your name</a>
+      <nav class="site-nav site-nav--center" aria-label="Page sections">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section
+        id="about"
+        class="hero hero--split"
+        aria-labelledby="hero-heading"
+        style="
+          --about-bg-quarter: url('images/about-quarter.png');
+          --about-bg-main: url('images/about-main.jpg');
+        "
+      >
+        <div class="hero__pane hero__pane--quarter" aria-hidden="true"></div>
+        <div class="hero__pane hero__pane--main">
+          <div class="hero__inner">
+            <h1 id="hero-heading">Hello, I’m <span>your name</span>.</h1>
+            <p class="tagline">
+              Artist, dancer, and maker — welcome to my corner of the web.
+            </p>
+            <p class="about">
+              Replace this paragraph with a short introduction: who you are, what
+              you care about, and what visitors will find here. Keep it friendly
+              and true to your voice; you can always refine it later.
+            </p>
+            <a class="scroll-hint" href="#work">
+              Explore my work
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+              <span class="sr-only">Scroll to work sections</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div id="work" class="work-sections">
+        <section id="paintings" class="work-block work-block--paintings" aria-labelledby="paintings-heading">
+          <div class="work-block__visual" aria-hidden="true">
+            <div class="work-block__visual-inner">
+              <div class="work-block__placeholder"></div>
+            </div>
+          </div>
+          <div class="work-block__content">
+            <h2 id="paintings-heading">Paintings</h2>
+            <p>
+              A catalogue of canvas and color — studies, series, and pieces you
+              want to share. Swap the placeholder for a photo of your work when
+              you are ready.
+            </p>
+            <a class="btn" href="paintings.html">
+              View catalogue
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section id="dance" class="work-block work-block--dance" aria-labelledby="dance-heading">
+          <div class="work-block__visual" aria-hidden="true">
+            <div class="work-block__visual-inner">
+              <div class="work-block__placeholder"></div>
+            </div>
+          </div>
+          <div class="work-block__content">
+            <h2 id="dance-heading">Dance</h2>
+            <p>
+              Performances, choreography, classes, or reels — however you
+              present movement, this section links to a dedicated gallery page.
+            </p>
+            <a class="btn" href="dance.html">
+              View catalogue
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section id="jewelry" class="work-block work-block--jewelry" aria-labelledby="jewelry-heading">
+          <div class="work-block__visual" aria-hidden="true">
+            <div class="work-block__visual-inner">
+              <div class="work-block__placeholder"></div>
+            </div>
+          </div>
+          <div class="work-block__content">
+            <h2 id="jewelry-heading">Handmade jewelry</h2>
+            <p>
+              Rings, necklaces, earrings — each piece can live in the catalogue
+              with a photo, title, and short note about materials or inspiration.
+            </p>
+            <a class="btn" href="jewelry.html">
+              View catalogue
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Your name. All rights reserved.</p>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

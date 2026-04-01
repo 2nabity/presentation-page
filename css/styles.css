@@ -81,6 +81,41 @@ a:hover {
   justify-content: flex-start;
 }
 
+.site-header__tools {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-header__instagram {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(242, 241, 238, 0.88);
+  text-decoration: none;
+  z-index: 101;
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.site-header__instagram:hover {
+  color: #faf8f5;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+.site-header__instagram svg {
+  display: block;
+}
+
+.site-header__tools .site-header__instagram {
+  margin-left: 0;
+}
+
 .site-nav--center {
   position: absolute;
   left: 50%;
@@ -107,6 +142,12 @@ a:hover {
   .site-header--home .site-logo {
     order: 0;
     text-align: center;
+  }
+
+  .site-header--home .site-header__instagram {
+    order: 2;
+    margin-left: 0;
+    align-self: center;
   }
 }
 
@@ -165,7 +206,8 @@ a:hover {
 #work,
 #paintings,
 #dance,
-#jewelry {
+#jewelry,
+#contact {
   scroll-margin-top: 5rem;
 }
 
@@ -255,6 +297,9 @@ main {
 
   .hero__pane--quarter {
     min-height: 25vh;
+    /* Show the top half of the portrait in the mobile strip (wide, short area) */
+    background-size: auto 200%;
+    background-position: center top;
   }
 
   .hero__inner {
@@ -405,18 +450,23 @@ main {
 }
 
 .work-block--jewelry .work-block__visual-inner {
-  padding: clamp(1.25rem, 4vw, 2.5rem);
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: clamp(0.4rem, 1.5vw, 0.85rem);
+  box-sizing: border-box;
 }
 
 .work-block--jewelry .work-block__photo {
-  width: auto;
-  height: auto;
-  max-width: min(92%, 400px);
-  max-height: min(70vh, 440px);
-  object-fit: contain;
-  object-position: center;
-  border-radius: 12px;
-  box-shadow: 0 16px 48px rgba(26, 24, 20, 0.14);
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 42%;
+  border-radius: 6px;
+  box-shadow: 0 12px 40px rgba(26, 24, 20, 0.14);
 }
 
 .work-block__placeholder {
@@ -501,6 +551,162 @@ main {
 .btn svg {
   width: 1rem;
   height: 1rem;
+}
+
+/* ——— Contact ——— */
+.contact-section {
+  border-top: 1px solid var(--line);
+  background: var(--bg-alt);
+  padding: clamp(2.5rem, 6vw, 4rem) var(--space);
+}
+
+.contact-section__inner {
+  max-width: min(var(--max), 100%);
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.contact-section__lead {
+  color: var(--ink-muted);
+  margin: 0 0 1.75rem;
+  line-height: 1.55;
+}
+
+.contact-section__lead a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.contact-section__notice {
+  padding: 0.85rem 1rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: rgba(139, 90, 60, 0.12);
+  border: 1px solid rgba(139, 90, 60, 0.25);
+  border-radius: 8px;
+}
+
+.contact-form__hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1rem;
+  align-items: stretch;
+}
+
+.contact-form__col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contact-form__col--meta {
+  gap: 0.85rem;
+}
+
+.contact-form__col--meta .contact-form__field {
+  align-items: flex-start;
+}
+
+.contact-form__col--meta .contact-form__field input {
+  width: calc(100% * 2 / 3);
+  max-width: 100%;
+}
+
+.contact-form__col--message {
+  min-height: 100%;
+  gap: 1rem;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-form__field--grow {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form__field--grow textarea {
+  flex: 1;
+  min-height: 9.5rem;
+}
+
+.contact-form__field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.65rem 0.85rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: 100%;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  outline: none;
+  border-color: rgba(139, 90, 60, 0.45);
+  box-shadow: 0 0 0 3px rgba(139, 90, 60, 0.12);
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.contact-form__submit {
+  margin-top: 0.15rem;
+  align-self: flex-start;
+}
+
+@media (max-width: 520px) {
+  .contact-form__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form__field--grow textarea {
+    min-height: 8rem;
+  }
 }
 
 /* ——— Page footer ——— */

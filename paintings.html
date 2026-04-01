@@ -15,11 +15,27 @@
   <body>
     <header class="site-header">
       <a class="site-logo" href="index.html">Alessia Obinu</a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="index.html#paintings">Paintings</a>
-        <a href="index.html#dance">Dance</a>
-        <a href="index.html#jewelry">Handmade jewelry</a>
-      </nav>
+      <div class="site-header__tools">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html#paintings">Paintings</a>
+          <a href="index.html#dance">Dance</a>
+          <a href="index.html#jewelry">Handmade jewelry</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <a
+          class="site-header__instagram"
+          href="https://www.instagram.com/ale_obins/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram — @ale_obins"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
     </header>
 
     <main class="catalogue-main">
@@ -68,7 +84,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> Alessia Obinu.</p>
+      <p>© <span id="year"></span> doinabity. All rights reserved.</p>
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();

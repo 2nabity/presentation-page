@@ -202,6 +202,11 @@ a:hover {
   text-decoration: none;
 }
 
+.site-header .site-nav a[aria-current="page"] {
+  color: #faf8f5;
+  font-weight: 600;
+}
+
 #about,
 #work,
 #paintings,
@@ -300,6 +305,58 @@ main {
   }
 }
 
+/* About page only: ¼ portrait (left) + ¾ existing hero photo + text (right) */
+.about-page .hero--split.about-page__hero--cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  align-items: stretch;
+  min-height: 88vh;
+}
+
+.about-page .hero--split.about-page__hero--cols .hero__pane--quarter {
+  min-height: 12rem;
+  background-color: var(--bg-alt);
+  background-image: url("../images/about-page-portrait.png?v=1");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.about-page .hero--split.about-page__hero--cols .hero__pane--main {
+  width: auto;
+  min-height: 88vh;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.about-page .hero--split.about-page__hero--cols .hero__pane--main::before {
+  background: linear-gradient(
+    105deg,
+    rgba(250, 248, 245, 0.93) 0%,
+    rgba(250, 248, 245, 0.9) 50%,
+    rgba(250, 248, 245, 0.88) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .about-page .hero--split.about-page__hero--cols {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(22vh, 200px) minmax(60vh, auto);
+    min-height: auto;
+  }
+
+  .about-page .hero--split.about-page__hero--cols .hero__pane--quarter {
+    min-height: 25vh;
+    background-size: auto 200%;
+    background-position: center top;
+  }
+
+  .about-page .hero--split.about-page__hero--cols .hero__pane--main {
+    min-height: min(70vh, 36rem);
+  }
+}
+
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 8vw, 4.25rem);
@@ -315,6 +372,76 @@ main {
   font-size: clamp(3.5rem, min(18vw, 22vh), 14rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
+}
+
+.hero .hero__tagline--solo {
+  margin: 0;
+  margin-top: 0.5em;
+  line-height: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 1rem);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.hero .hero__roles {
+  margin: clamp(1.25rem, 3.5vw, 2.25rem) 0 0;
+  max-width: 100%;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.75vw, 1.85rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-align: center;
+}
+
+.about-page .hero__inner--about-main.hero__inner--solo {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-sizing: border-box;
+}
+
+.about-page .hero__inner--about-main .hero__intro {
+  text-align: center;
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+.about-page .hero__inner--about-main .hero__intro h1 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.about-page .hero__inner--about-main .hero__intro .hero__tagline--solo {
+  margin-top: 0.35em;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.about-page .hero__inner--about-main .hero__intro .hero__roles {
+  margin-top: 0.85rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+}
+
+.about-page .about-page__hero-bio {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-page .about-page__hero-bio p {
+  margin: 0 0 1.1em;
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.about-page .about-page__hero-bio p:last-child {
+  margin-bottom: 0;
 }
 
 .hero .tagline {
@@ -703,6 +830,26 @@ main {
   .contact-form__field--grow textarea {
     min-height: 8rem;
   }
+}
+
+/* ——— About page ——— */
+.about-page__body {
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  padding: clamp(2.5rem, 6vw, 4rem) var(--space);
+}
+
+.about-page__body-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.about-page__body-inner p {
+  max-width: 40em;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
 }
 
 /* ——— Page footer ——— */

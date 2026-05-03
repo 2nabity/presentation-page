@@ -226,35 +226,24 @@ main {
   margin: 0 auto;
 }
 
-/* About: ¼ + ¾ split with two background images (paths set on section via --about-bg-*) */
+/* About: full-width hero with background image */
 .hero--split {
-  /* Paths relative to this file (css/styles.css), not index.html */
-  --about-bg-quarter: url("../images/about-quarter.png");
-  --about-bg-main: url("../images/about-main.png");
+  --about-bg-main: url("../images/about-main.png?v=20260503");
   max-width: none;
   margin: 0;
   padding: 0;
   min-height: 88vh;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
-  align-items: stretch;
-}
-
-.hero__pane--quarter {
-  min-height: 12rem;
-  background-color: var(--bg-alt);
-  background-image: var(--about-bg-quarter);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: block;
 }
 
 .hero__pane--main {
   position: relative;
-  min-height: 12rem;
+  min-height: 88vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: var(--bg-alt);
   background-image: var(--about-bg-main);
   background-size: cover;
@@ -268,9 +257,9 @@ main {
   inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(250, 248, 245, 0.92) 0%,
-    rgba(250, 248, 245, 0.78) 45%,
-    rgba(250, 248, 245, 0.55) 100%
+    rgba(250, 248, 245, 0.88) 0%,
+    rgba(250, 248, 245, 0.72) 45%,
+    rgba(250, 248, 245, 0.5) 100%
   );
   pointer-events: none;
 }
@@ -279,27 +268,26 @@ main {
   position: relative;
   z-index: 1;
   padding: var(--space);
-  padding-left: clamp(1.25rem, 4vw, 3rem);
-  padding-right: var(--space);
   max-width: 40rem;
 }
 
-.hero--split .scroll-hint {
-  color: var(--accent);
+.hero__inner--solo {
+  width: 75%;
+  max-width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: var(--space) 0;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .hero--split {
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(22vh, 200px) minmax(60vh, auto);
     min-height: auto;
   }
 
-  .hero__pane--quarter {
-    min-height: 25vh;
-    /* Show the top half of the portrait in the mobile strip (wide, short area) */
-    background-size: auto 200%;
-    background-position: center top;
+  .hero__pane--main {
+    min-height: min(88vh, 42rem);
   }
 
   .hero__inner {
@@ -319,6 +307,14 @@ main {
   line-height: 1.1;
   margin: 0 0 1rem;
   letter-spacing: -0.02em;
+}
+
+.hero .hero__inner--solo h1 {
+  margin: 0;
+  width: 100%;
+  font-size: clamp(3.5rem, min(18vw, 22vh), 14rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
 }
 
 .hero .tagline {

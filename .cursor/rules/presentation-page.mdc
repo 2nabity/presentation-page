@@ -1,0 +1,9 @@
+---
+description: Static portfolio site — HTML, CSS, shared styles.
+globs: "**/*.{html,css}"
+alwaysApply: false
+---
+
+# presentation-page
+
+Hand-written static pages and `css/styles.css`. Prefer small, focused edits; match existing structure, class names, and visual patterns.

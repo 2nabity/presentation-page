@@ -17,17 +17,31 @@
       <a class="site-logo" href="index.html">Alessia Obinu</a>
       <div class="site-header__tools">
         <nav class="site-nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <details class="site-nav__dropdown">
-            <summary class="site-nav__dropdown-trigger">Work</summary>
-            <ul class="site-nav__menu" role="list">
+          <div class="site-nav__desktop">
+            <a href="about.html">About</a>
+            <details class="site-nav__dropdown">
+              <summary class="site-nav__dropdown-trigger">Work</summary>
+              <ul class="site-nav__menu" role="list">
+                <li><a href="dance2.html">Dance</a></li>
+                <li><a href="paintings.html">Paintings</a></li>
+                <li><a href="jewelry.html">Jewelry</a></li>
+              </ul>
+            </details>
+            <a href="collaborations.html">Collaborations</a>
+          </div>
+          <details class="site-nav__dropdown site-nav__dropdown--mobile">
+            <summary class="site-nav__dropdown-trigger">Menu</summary>
+            <ul class="site-nav__menu site-nav__menu--mobile" role="list">
+              <li><a href="about.html">About</a></li>
+              <li class="site-nav__menu-label" role="presentation">Work</li>
               <li><a href="dance2.html">Dance</a></li>
               <li><a href="paintings.html">Paintings</a></li>
               <li><a href="jewelry.html">Jewelry</a></li>
+              <li><a href="collaborations.html">Collaborations</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </details>
-          <a href="collaborations.html">Collaborations</a>
-          <a href="#contact">Contact</a>
+          <a class="site-nav__contact" href="#contact">Contact</a>
         </nav>
         <a
           class="site-header__instagram"
@@ -276,53 +290,20 @@
       })();
       (function () {
         if (!document.body.classList.contains("page-home")) return;
+        if (!window.matchMedia("(min-width: 769px)").matches) return;
 
         var sections = Array.prototype.slice.call(
           document.querySelectorAll(".hero--split, .home-biography, .work-block, .contact-section")
         );
         if (!sections.length) return;
 
-        var lock = false;
-        var lockMs = 900;
-
-        function scrollableParent(node) {
-          return node && node.closest(".home-biography__content, .contact-section__inner");
-        }
-
-        function canScrollDown(el) {
-          return el.scrollTop + el.clientHeight < el.scrollHeight - 2;
-        }
-
-        function canScrollUp(el) {
-          return el.scrollTop > 2;
-        }
-
         function sectionTop(el) {
           return window.scrollY + el.getBoundingClientRect().top;
         }
 
-        function currentIndex() {
-          var best = 0;
-          var bestDist = Infinity;
-          sections.forEach(function (el, i) {
-            var dist = Math.abs(el.getBoundingClientRect().top);
-            if (dist < bestDist) {
-              bestDist = dist;
-              best = i;
-            }
-          });
-          return best;
-        }
-
         function goTo(index) {
-          if (index < 0 || index >= sections.length || lock) return;
-          lock = true;
-          var top = sectionTop(sections[index]);
-          window.scrollTo({ top: top, behavior: "smooth" });
-          window.setTimeout(function () {
-            window.scrollTo({ top: top, behavior: "auto" });
-            lock = false;
-          }, lockMs);
+          if (index < 0 || index >= sections.length) return;
+          window.scrollTo({ top: sectionTop(sections[index]), behavior: "smooth" });
         }
 
         function goToHashTarget(el) {
@@ -350,34 +331,6 @@
             goToHashTarget(target);
           });
         });
-
-        window.addEventListener(
-          "wheel",
-          function (e) {
-            if (lock) {
-              e.preventDefault();
-              return;
-            }
-
-            if (Math.abs(e.deltaY) < 8) return;
-
-            var scrollEl = scrollableParent(e.target);
-            if (scrollEl) {
-              if (e.deltaY > 0 && canScrollDown(scrollEl)) return;
-              if (e.deltaY < 0 && canScrollUp(scrollEl)) return;
-            }
-
-            var i = currentIndex();
-            if (e.deltaY > 0 && i < sections.length - 1) {
-              e.preventDefault();
-              goTo(i + 1);
-            } else if (e.deltaY < 0 && i > 0) {
-              e.preventDefault();
-              goTo(i - 1);
-            }
-          },
-          { passive: false }
-        );
       })();
     </script>
   </body>

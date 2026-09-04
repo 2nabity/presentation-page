@@ -17,17 +17,31 @@
       <a class="site-logo" href="index.html">Alessia Obinu</a>
       <div class="site-header__tools">
         <nav class="site-nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <details class="site-nav__dropdown">
-            <summary class="site-nav__dropdown-trigger">Work</summary>
-            <ul class="site-nav__menu" role="list">
+          <div class="site-nav__desktop">
+            <a href="about.html">About</a>
+            <details class="site-nav__dropdown">
+              <summary class="site-nav__dropdown-trigger">Work</summary>
+              <ul class="site-nav__menu" role="list">
+                <li><a href="dance2.html">Dance</a></li>
+                <li><a href="paintings.html">Paintings</a></li>
+                <li><a href="jewelry.html">Jewelry</a></li>
+              </ul>
+            </details>
+            <a href="collaborations.html" aria-current="page">Collaborations</a>
+          </div>
+          <details class="site-nav__dropdown site-nav__dropdown--mobile">
+            <summary class="site-nav__dropdown-trigger">Menu</summary>
+            <ul class="site-nav__menu site-nav__menu--mobile" role="list">
+              <li><a href="about.html">About</a></li>
+              <li class="site-nav__menu-label" role="presentation">Work</li>
               <li><a href="dance2.html">Dance</a></li>
               <li><a href="paintings.html">Paintings</a></li>
               <li><a href="jewelry.html">Jewelry</a></li>
+              <li><a href="collaborations.html" aria-current="page">Collaborations</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
             </ul>
           </details>
-          <a href="collaborations.html" aria-current="page">Collaborations</a>
-          <a href="index.html#contact">Contact</a>
+          <a class="site-nav__contact" href="index.html#contact">Contact</a>
         </nav>
         <a
           class="site-header__instagram"

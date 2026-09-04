@@ -17,17 +17,31 @@
       <a class="site-logo" href="index.html">Alessia Obinu</a>
       <div class="site-header__tools">
         <nav class="site-nav" aria-label="Primary">
-          <a href="about.html">About</a>
-          <details class="site-nav__dropdown">
-            <summary class="site-nav__dropdown-trigger">Work</summary>
-            <ul class="site-nav__menu" role="list">
+          <div class="site-nav__desktop">
+            <a href="about.html">About</a>
+            <details class="site-nav__dropdown">
+              <summary class="site-nav__dropdown-trigger">Work</summary>
+              <ul class="site-nav__menu" role="list">
+                <li><a href="dance2.html" aria-current="page">Dance</a></li>
+                <li><a href="paintings.html">Paintings</a></li>
+                <li><a href="jewelry.html">Jewelry</a></li>
+              </ul>
+            </details>
+            <a href="collaborations.html">Collaborations</a>
+          </div>
+          <details class="site-nav__dropdown site-nav__dropdown--mobile">
+            <summary class="site-nav__dropdown-trigger">Menu</summary>
+            <ul class="site-nav__menu site-nav__menu--mobile" role="list">
+              <li><a href="about.html">About</a></li>
+              <li class="site-nav__menu-label" role="presentation">Work</li>
               <li><a href="dance2.html" aria-current="page">Dance</a></li>
               <li><a href="paintings.html">Paintings</a></li>
               <li><a href="jewelry.html">Jewelry</a></li>
+              <li><a href="collaborations.html">Collaborations</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
             </ul>
           </details>
-          <a href="collaborations.html">Collaborations</a>
-          <a href="index.html#contact">Contact</a>
+          <a class="site-nav__contact" href="index.html#contact">Contact</a>
         </nav>
         <a
           class="site-header__instagram"
@@ -160,6 +174,7 @@
 
       (function () {
         if (!document.body.classList.contains("page-dance2")) return;
+        if (!window.matchMedia("(min-width: 769px)").matches) return;
 
         var sections = Array.prototype.slice.call(
           document.querySelectorAll(".page-dance2 .dance-role-unit")
@@ -170,9 +185,6 @@
           document.querySelectorAll(".dance2-section-nav__link")
         );
 
-        var lock = false;
-        var lockMs = 900;
-
         function setActiveNav(index) {
           navLinks.forEach(function (link, i) {
             if (i === index) {
@@ -181,18 +193,6 @@
               link.removeAttribute("aria-current");
             }
           });
-        }
-
-        function scrollableParent(node) {
-          return node && node.closest(".page-dance2 .dance-role__body");
-        }
-
-        function canScrollDown(el) {
-          return el.scrollTop + el.clientHeight < el.scrollHeight - 2;
-        }
-
-        function canScrollUp(el) {
-          return el.scrollTop > 2;
         }
 
         function sectionTop(el) {
@@ -213,15 +213,9 @@
         }
 
         function goTo(index) {
-          if (index < 0 || index >= sections.length || lock) return;
-          lock = true;
+          if (index < 0 || index >= sections.length) return;
           setActiveNav(index);
-          var top = sectionTop(sections[index]);
-          window.scrollTo({ top: top, behavior: "smooth" });
-          window.setTimeout(function () {
-            window.scrollTo({ top: top, behavior: "auto" });
-            lock = false;
-          }, lockMs);
+          window.scrollTo({ top: sectionTop(sections[index]), behavior: "smooth" });
         }
 
         document.querySelectorAll("body.page-dance2 a[href^='#']").forEach(function (link) {
@@ -240,32 +234,18 @@
 
         setActiveNav(0);
 
+        var navTicking = false;
         window.addEventListener(
-          "wheel",
-          function (e) {
-            if (lock) {
-              e.preventDefault();
-              return;
-            }
-
-            if (Math.abs(e.deltaY) < 8) return;
-
-            var scrollEl = scrollableParent(e.target);
-            if (scrollEl) {
-              if (e.deltaY > 0 && canScrollDown(scrollEl)) return;
-              if (e.deltaY < 0 && canScrollUp(scrollEl)) return;
-            }
-
-            var i = currentIndex();
-            if (e.deltaY > 0 && i < sections.length - 1) {
-              e.preventDefault();
-              goTo(i + 1);
-            } else if (e.deltaY < 0 && i > 0) {
-              e.preventDefault();
-              goTo(i - 1);
-            }
+          "scroll",
+          function () {
+            if (navTicking) return;
+            navTicking = true;
+            requestAnimationFrame(function () {
+              setActiveNav(currentIndex());
+              navTicking = false;
+            });
           },
-          { passive: false }
+          { passive: true }
         );
       })();
     </script>

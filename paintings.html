@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=a10fdd0" />
+    <link rel="stylesheet" href="css/styles.css?v=paintings-fullscreen" />
   </head>
   <body class="page-paintings">
     <header class="site-header">
@@ -59,39 +59,46 @@
       </div>
     </header>
 
+    <nav class="paintings-section-nav" aria-label="Paintings sections">
+      <a id="intro-heading" href="#intro" class="paintings-section-nav__link" aria-current="true">/intro/</a>
+      <a id="paintings-heading" href="#paintings" class="paintings-section-nav__link">/paintings/</a>
+    </nav>
+
     <main class="catalogue-main paintings-page">
-      <section class="paintings-page__intro-section" aria-label="Artist statement">
+      <section id="intro" class="paintings-page__intro-section" aria-labelledby="intro-heading">
+        <div class="paintings-page__intro-portrait" aria-hidden="true"></div>
+        <div class="paintings-page__intro-body">
         <div class="paintings-page__intro">
         <p>
-          A self-taught artist, she has always been deeply connected to art, a passion that has accompanied her since
-          childhood.
+          I am a self-taught artist, and I have always been deeply connected to art—a passion that has accompanied me
+          since childhood.
         </p>
         <p>
-          Her first works took shape on simple white sheets of paper, using only a black pen. Guided by the desire to
-          fill the space with lines and shapes that emerged from improvisation, she created without a precise
+          My first works took shape on simple white sheets of paper, using only a black pen. Guided by the desire to
+          fill the space with lines and shapes that emerged from improvisation, I created without a precise
           outline—an instinctive and liberating gesture.
         </p>
         <p>
-          Over time, she felt the opposite need: to remove, to simplify, to leave space for emptiness. This led her to
-          explore acrylic painting, a medium with which she began to reshape her visual language. Her current style
-          leans toward surrealism, driven by the desire to convey something beyond the image and reality, exploring
-          sensations, emotions, dreams, and other dimensions.
+          Over time, I felt the opposite need: to remove, to simplify, and to leave space for emptiness. This led me to
+          explore acrylic painting, a medium through which I began to reshape my visual language. My current style leans
+          toward surrealism, driven by the desire to convey something beyond the image and reality, exploring sensations,
+          emotions, dreams, and other dimensions.
         </p>
         <p>
-          In January 2025, she held her first exhibition, BEYOND REALITY, at Sala Basiana in Barcelona. That same year,
-          she was an artist in residence at Artquemy Gallery in Barcelona, an experience that added new depth to her
-          artistic exploration, and she also took part in a collective exhibition at the same gallery. She was also one
-          of the selected artists in the collective exhibition &ldquo;DREAMS&rdquo; by Arteaporte, in Turin, July 2026.
+          In January 2025, I held my first exhibition, BEYOND REALITY, at Sala Basiana in Barcelona. That same year, I
+          was an artist in residence at Artquemy Gallery in Barcelona, an experience that added new depth to my artistic
+          exploration. I also took part in a collective exhibition at the same gallery. In July 2026, I was one of the
+          selected artists for the collective exhibition &ldquo;DREAMS&rdquo; by Arteaporte in Turin.
         </p>
         <p>
-          She is currently collaborating with Claudia Reig Mart&iacute;n&rsquo;s Mythym project, creating illustrations
-          for her book.
+          I am currently collaborating with Claudia Reig Mart&iacute;n&rsquo;s Mythym project, creating illustrations for
+          her book.
         </p>
+        </div>
         </div>
       </section>
 
-      <section class="paintings-page__gallery-section" aria-labelledby="paintings-gallery-heading">
-        <h2 class="paintings-page__heading" id="paintings-gallery-heading">/paintings/</h2>
+      <section id="paintings" class="paintings-page__gallery-section" aria-labelledby="paintings-heading">
 
         <div class="paintings-gallery">
         <article class="paintings-card">
@@ -208,6 +215,78 @@
         lightbox.addEventListener("close", function () {
           lightboxImg.removeAttribute("src");
         });
+      })();
+
+      (function () {
+        if (!document.body.classList.contains("page-paintings")) return;
+
+        var sections = Array.prototype.slice.call(document.querySelectorAll("#intro, #paintings"));
+        if (!sections.length) return;
+
+        var navLinks = Array.prototype.slice.call(
+          document.querySelectorAll(".paintings-section-nav__link")
+        );
+
+        function setActiveNav(index) {
+          navLinks.forEach(function (link, i) {
+            if (i === index) {
+              link.setAttribute("aria-current", "true");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        }
+
+        function sectionTop(el) {
+          return window.scrollY + el.getBoundingClientRect().top;
+        }
+
+        function currentIndex() {
+          var best = 0;
+          var bestDist = Infinity;
+          sections.forEach(function (el, i) {
+            var dist = Math.abs(el.getBoundingClientRect().top);
+            if (dist < bestDist) {
+              bestDist = dist;
+              best = i;
+            }
+          });
+          return best;
+        }
+
+        function goTo(index) {
+          if (index < 0 || index >= sections.length) return;
+          setActiveNav(index);
+          window.scrollTo({ top: sectionTop(sections[index]), behavior: "smooth" });
+        }
+
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            var hash = link.getAttribute("href");
+            if (!hash || hash.charAt(0) !== "#") return;
+            var target = document.getElementById(hash.slice(1));
+            if (!target) return;
+            e.preventDefault();
+            var i = sections.indexOf(target);
+            if (i >= 0) goTo(i);
+          });
+        });
+
+        setActiveNav(0);
+
+        var navTicking = false;
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (navTicking) return;
+            navTicking = true;
+            requestAnimationFrame(function () {
+              setActiveNav(currentIndex());
+              navTicking = false;
+            });
+          },
+          { passive: true }
+        );
       })();
     </script>
   </body>

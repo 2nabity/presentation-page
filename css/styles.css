@@ -664,6 +664,11 @@ main {
 }
 
 /* About page only: ¼ portrait (left) + ¾ existing hero photo + text (right) */
+body.page-about {
+  background: #101010;
+  color: #f2f1ee;
+}
+
 .about-page {
   min-height: calc(100dvh - var(--header-offset));
 }
@@ -699,9 +704,9 @@ main {
 .about-page .hero--split.about-page__hero--cols .hero__pane--main::before {
   background: linear-gradient(
     105deg,
-    rgba(250, 248, 245, 0.93) 0%,
-    rgba(250, 248, 245, 0.9) 50%,
-    rgba(250, 248, 245, 0.88) 100%
+    rgba(16, 16, 16, 0.92) 0%,
+    rgba(16, 16, 16, 0.86) 50%,
+    rgba(16, 16, 16, 0.9) 100%
   );
 }
 
@@ -720,8 +725,9 @@ main {
   .about-page .hero--split.about-page__hero--cols .hero__pane--quarter {
     min-height: 28vh;
     height: auto;
+    background-color: #101010;
     background-size: auto 200%;
-    background-position: center top;
+    background-position: center 22%;
   }
 
   .about-page .hero--split.about-page__hero--cols .hero__pane--main {
@@ -733,6 +739,12 @@ main {
     width: 100%;
     padding-inline: clamp(1.5rem, 5vw, 3.5rem);
     box-sizing: border-box;
+    background-image: none;
+    background-color: #101010;
+  }
+
+  .about-page .hero--split.about-page__hero--cols .hero__pane--main::before {
+    display: none;
   }
 
   .about-page .hero__inner--about-main.hero__inner--solo {
@@ -839,18 +851,21 @@ main {
 .about-page .hero__inner--about-main .hero__intro h1 {
   font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 400;
+  color: #f2f1ee;
 }
 
 .about-page .hero__inner--about-main .hero__intro .hero__tagline--solo {
   margin-top: 0.35em;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: 500;
+  color: rgba(242, 241, 238, 0.88);
 }
 
 .about-page .hero__inner--about-main .hero__intro .hero__roles {
   margin-top: 0.85rem;
   font-size: clamp(0.95rem, 1.6vw, 1.25rem);
   font-weight: 500;
+  color: rgba(242, 241, 238, 0.88);
 }
 
 .about-page .about-page__hero-bio {
@@ -870,7 +885,7 @@ main {
   margin: 0 0 1.1em;
   font-size: clamp(0.86rem, 1.05vw, 0.94rem);
   line-height: 1.65;
-  color: var(--ink);
+  color: rgba(242, 241, 238, 0.88);
 }
 
 .about-page .about-page__hero-bio p:last-child {
@@ -1046,41 +1061,71 @@ body.page-home > main {
   flex-direction: column;
   border-top: none;
   background: #101010;
-  padding-inline: clamp(1.5rem, 5vw, 3.5rem);
+  padding-inline: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .page-home .home-biography__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   flex: 1;
   min-height: 0;
   height: 100%;
   overflow: hidden;
   width: 100%;
-  max-width: var(--max);
-  margin-inline: auto;
+  max-width: none;
+  margin-inline: 0;
+}
+
+.page-home .home-biography__grid::before {
+  content: "";
+  grid-area: 1 / 1;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(16, 16, 16, 0.55) 0%,
+    rgba(16, 16, 16, 0.72) 45%,
+    rgba(16, 16, 16, 0.82) 100%
+  );
+  pointer-events: none;
 }
 
 .page-home .home-biography__portrait {
+  grid-area: 1 / 1;
   min-height: 0;
   height: 100%;
+  width: 100%;
   overflow: hidden;
   background: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-home .home-biography__portrait img {
+  width: 100%;
   height: 100%;
   min-height: 0;
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 .page-home .home-biography__content {
+  grid-area: 1 / 1;
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow-y: auto;
   min-height: 0;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  padding: clamp(2rem, 5vw, 3.25rem) clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2rem, 5vw, 3.25rem) clamp(1.5rem, 5vw, 3.5rem);
   box-sizing: border-box;
 }
 
@@ -1096,6 +1141,9 @@ body.page-home > main {
   font-size: clamp(1.9rem, 4vw, 2.8rem);
   font-weight: 400;
   letter-spacing: 0.05em;
+  width: 100%;
+  max-width: 42rem;
+  text-align: center;
 }
 
 .page-home .home-biography__text,
@@ -1109,6 +1157,18 @@ body.page-home > main {
   color: rgba(242, 241, 238, 0.88);
   font-size: clamp(0.86rem, 1.05vw, 0.94rem);
   line-height: 1.65;
+}
+
+.page-home .home-biography .btn {
+  color: #101010;
+  background: #f2f1ee;
+  margin-top: clamp(2.25rem, 5vw, 3rem);
+  align-self: center;
+}
+
+.page-home .home-biography .btn:hover {
+  background: var(--accent-soft);
+  color: #101010;
 }
 
 .page-home .work-block {
@@ -1261,27 +1321,27 @@ body.page-home > main {
   }
 
   .page-home .home-biography__grid {
-    grid-template-rows: auto auto;
+    min-height: 100dvh;
     height: auto;
     overflow: visible;
   }
 
   .page-home .home-biography__portrait {
-    height: auto;
-    min-height: min(50vh, 28rem);
-    overflow: visible;
+    min-height: 100%;
   }
 
+  .page-home .home-biography__portrait,
   .page-home .home-biography__portrait img {
-    height: auto;
     width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
+    height: 100%;
+    margin-left: 0;
   }
 
   .page-home .home-biography__content {
     overflow: visible;
     overscroll-behavior: auto;
+    min-height: 100dvh;
+    justify-content: center;
   }
 
   .page-home .contact-section__inner {
@@ -1682,8 +1742,8 @@ body.page-home .site-footer {
 
 body.page-about .site-footer,
 body.page-about .site-footer p {
-  color: var(--ink-muted);
-  background: var(--bg);
+  color: rgba(242, 241, 238, 0.5);
+  background: #101010;
 }
 
 body.page-paintings .site-footer,
@@ -1805,19 +1865,205 @@ body.page-jewelry {
   min-height: 100dvh;
 }
 
-body.page-paintings .catalogue-main.paintings-page,
+body.page-paintings .catalogue-main.paintings-page {
+  max-width: none;
+  padding: 0;
+}
+
 body.page-jewelry .catalogue-main.jewelry-page {
   max-width: var(--max);
   padding: calc(var(--header-offset) + clamp(2rem, 5vw, 3.5rem)) clamp(1.5rem, 5vw, 3.5rem)
     clamp(3rem, 6vw, 4.5rem);
 }
 
-body.page-paintings .site-header .site-nav a[aria-current="page"],
-body.page-jewelry .site-header .site-nav a[aria-current="page"] {
-  color: #faf8f5;
+.paintings-section-nav,
+.page-dance2 .dance2-section-nav {
+  position: fixed;
+  top: var(--header-offset);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 3vw, 2rem);
+  padding: 0.65rem var(--space);
+  background: transparent;
+  border-bottom: none;
 }
 
-.paintings-page__intro-section,
+.paintings-section-nav__link,
+.page-dance2 .dance2-section-nav__link {
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(242, 241, 238, 0.5);
+  text-decoration: none;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  transition: color 0.2s;
+}
+
+.paintings-section-nav__link:hover,
+.page-dance2 .dance2-section-nav__link:hover {
+  color: rgba(242, 241, 238, 0.82);
+  text-decoration: none;
+}
+
+.paintings-section-nav__link[aria-current="true"],
+.page-dance2 .dance2-section-nav__link[aria-current="true"] {
+  color: rgba(242, 241, 238, 0.95);
+}
+
+body.page-paintings #intro,
+body.page-paintings #paintings {
+  scroll-margin-top: 0;
+}
+
+@media (min-width: 769px) {
+  html:has(body.page-paintings) {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
+  }
+}
+
+body.page-paintings .paintings-page__intro-portrait {
+  background-color: #101010;
+  background-image: url("../images/paitings-ale.jpeg");
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 769px) {
+  body.page-paintings .paintings-page__intro-section {
+    --paintings-intro-image-ratio: 0.35;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
+    display: grid;
+    grid-template-columns: minmax(0, calc(var(--paintings-intro-image-ratio) * 100%)) minmax(0, 1fr);
+    align-items: stretch;
+    padding: calc(var(--header-offset) + 3.25rem) 0 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    flex-shrink: 0;
+    background: #101010;
+  }
+
+  body.page-paintings .paintings-page__intro-portrait {
+    min-height: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  body.page-paintings .paintings-page__intro-body {
+    display: flex;
+    align-items: center;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 4vw, 3rem);
+    box-sizing: border-box;
+  }
+}
+
+body.page-paintings .paintings-page__intro {
+  width: 100%;
+  max-width: 42rem;
+  max-height: 100%;
+  margin: 0;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.page-paintings .paintings-page__gallery-section {
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0;
+  padding: calc(var(--header-offset) + 3.25rem) clamp(1.5rem, 5vw, 3.5rem) clamp(2rem, 4vw, 3rem);
+  box-sizing: border-box;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+  flex-shrink: 0;
+  border-top: none;
+  background: #101010;
+}
+
+body.page-paintings .paintings-page__heading {
+  flex-shrink: 0;
+}
+
+body.page-paintings .paintings-gallery {
+  flex: 0 1 auto;
+  width: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+  align-content: center;
+  margin-block: auto;
+}
+
+@media (max-width: 768px) {
+  html:has(body.page-paintings) {
+    scroll-snap-type: none;
+  }
+
+  body.page-paintings .paintings-page__intro-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    max-height: none;
+    min-height: 100dvh;
+    overflow: visible;
+    scroll-snap-align: none;
+    padding: calc(var(--header-offset) + 3.25rem) 0 0;
+    background: #101010;
+  }
+
+  body.page-paintings .paintings-page__intro-portrait {
+    min-height: 28vh;
+    height: auto;
+    background-size: auto 200%;
+    background-position: center top;
+  }
+
+  body.page-paintings .paintings-page__intro-body {
+    height: auto;
+    overflow: visible;
+    padding: clamp(2rem, 5vw, 3.25rem) clamp(1.5rem, 5vw, 3.5rem);
+  }
+
+  body.page-paintings .paintings-page__gallery-section {
+    height: auto;
+    max-height: none;
+    min-height: 100dvh;
+    overflow: visible;
+    scroll-snap-align: none;
+  }
+
+  body.page-paintings .paintings-page__intro,
+  body.page-paintings .paintings-gallery {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 .jewelry-page__intro-section {
   max-width: 42rem;
   margin-inline: auto;
@@ -1843,7 +2089,11 @@ body.page-jewelry .site-header .site-nav a[aria-current="page"] {
   margin-bottom: 0;
 }
 
-.paintings-page__gallery-section,
+body.page-paintings .site-header .site-nav a[aria-current="page"],
+body.page-jewelry .site-header .site-nav a[aria-current="page"] {
+  color: #faf8f5;
+}
+
 .jewelry-page__gallery-section {
   margin-top: clamp(2.75rem, 6vw, 4rem);
   padding-top: clamp(2.5rem, 5vw, 3.25rem);
@@ -2379,43 +2629,6 @@ html:has(body.page-dance2) {
 body.page-dance2 > main.dance-page {
   padding-top: 0;
   padding-bottom: 0;
-}
-
-.page-dance2 .dance2-section-nav {
-  position: fixed;
-  top: var(--header-offset);
-  left: 0;
-  right: 0;
-  z-index: 99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: clamp(0.75rem, 3vw, 2rem);
-  padding: 0.65rem var(--space);
-  background: transparent;
-  border-bottom: none;
-}
-
-.page-dance2 .dance2-section-nav__link {
-  font-family: var(--font-dance-baskerville);
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: rgba(242, 241, 238, 0.5);
-  text-decoration: none;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
-  transition: color 0.2s;
-}
-
-.page-dance2 .dance2-section-nav__link:hover {
-  color: rgba(242, 241, 238, 0.82);
-  text-decoration: none;
-}
-
-.page-dance2 .dance2-section-nav__link[aria-current="true"] {
-  color: rgba(242, 241, 238, 0.95);
 }
 
 /* Dancer: marble studio greys with soft violet shadow */

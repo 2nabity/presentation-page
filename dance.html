@@ -4,23 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dance — Alessia Obinu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-dance">
     <header class="site-header">
       <a class="site-logo" href="index.html">Alessia Obinu</a>
       <div class="site-header__tools">
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html">About</a>
-          <a href="index.html#paintings">Paintings</a>
-          <a href="index.html#dance">Dance</a>
-          <a href="index.html#jewelry">Handmade jewelry</a>
+          <details class="site-nav__dropdown">
+            <summary class="site-nav__dropdown-trigger">Work</summary>
+            <ul class="site-nav__menu" role="list">
+              <li><a href="dance2.html" aria-current="page">Dance</a></li>
+              <li><a href="paintings.html">Paintings</a></li>
+              <li><a href="jewelry.html">Jewelry</a></li>
+            </ul>
+          </details>
+          <a href="collaborations.html">Collaborations</a>
           <a href="index.html#contact">Contact</a>
         </nav>
         <a
@@ -39,47 +39,104 @@
       </div>
     </header>
 
-    <main class="catalogue-main">
-      <div class="back-row">
-        <a class="back-link" href="index.html#dance">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          Back to home
-        </a>
-      </div>
+    <main class="catalogue-main dance-page">
 
-      <header class="catalogue-header">
-        <h1>Dance</h1>
-        <p>
-          Use this grid for performances, video stills, workshop photos, or
-          posters. Link each card to YouTube, Vimeo, or Instagram if you like by
-          wrapping the card in an anchor or adding a “Watch” button.
-        </p>
-      </header>
 
-      <div class="catalogue-grid">
-        <article class="catalogue-card">
-          <div class="catalogue-card__image">Image / video still</div>
-          <div class="catalogue-card__body">
-            <h2>Piece or show title</h2>
-            <p>Venue · Date · Role (choreographer, dancer, teacher).</p>
+      <div class="dance-roles">
+        <div class="dance-section-bar">
+          <p class="dance-section-bar__label">/dancer/</p>
+        </div>
+
+        <section id="dancer" class="dance-role dance-role--split" aria-labelledby="dancer-heading">
+          <div class="dance-role__split">
+            <figure class="dance-role__figure">
+              <img
+                src="images/dance-dancer.png"
+                alt="Alessia Obinu in a low contemporary dance pose in the studio, arms extended forward."
+                width="800"
+                height="1200"
+                loading="lazy"
+              />
+            </figure>
+            <div class="dance-role__body dance-role__body--credits">
+              <p>2026: “SIMBIOSIS” by Catalina Varela, Brussels, Belgium.</p>
+              <p>2025: “A-STRATI” with Federica Franzini and Chiara Mesiani, Brussels, Belgium.</p>
+              <p>2025: “SOIDCIUS” with Chiara Olivia Pernicini, Barcelona, Spain.</p>
+              <p>2023: “Tu carne serà mi poema” by Skin Signal Barcelona, Spain.</p>
+              <p>2022: “ECHI confessioni danzate di un borgo” with Vaga Project, Padova, Italy</p>
+              <p>2022: “City Horses” by Anna Källblad and Helena Byström, Olot, Figueras, Barcelona, Spain and Prague, Czech Republic.</p>
+              <p>2022: “WHAT REALLY HAPPENS?!” by Moimentu Dance Company, Sardinia, Italy.</p>
+              <p>2021: “FUGA DA ESCHER” with Vaga Project, Milan, Italy.</p>
+              <p>2021: “I Tre Lati del Cerchio” with Vaga Project, Barletta, Italy.</p>
+              <p>2021: “Ravanare” with Chiara Mesiani and Angelica Squicciarini, Milan, Italy.</p>
+              <p>2019: “ROLLING IDOLS” by Susanna Beltrami, Milan, Italy.</p>
+              <p>2019: “Holyland” by Stefano Fardelli, Milan, Italy.</p>
+              <p>2018: “WALK. Viaggio in un’oscurità cosciente” by Arianna Guaglione, Milan, Italy.</p>
+              <p>2018: “Le Sacre du Printemps” by Susanna Beltrami, Milan, Italy.</p>
+              <p>2017: “Lalalend” by Matteo Bittante, Milan, Italy.</p>
+              <p>2017: “Links” by Stefano Fardelli, Milan, Italy.</p>
+              <p>2017: “Awakening the Sleeping Beauty” by Susanna Beltrami, Milan, Italy.</p>
+              <p>2015: “AB-AMAI” by Cathy Marchand, Sardinia, Italy.</p>
+            </div>
           </div>
-        </article>
-        <article class="catalogue-card">
-          <div class="catalogue-card__image">Image / video still</div>
-          <div class="catalogue-card__body">
-            <h2>Choreography reel</h2>
-            <p>Link to full video · Style or music credit.</p>
+        </section>
+
+        <div class="dance-section-bar">
+          <p class="dance-section-bar__label">/choreographer/</p>
+        </div>
+
+        <section id="choreographer" class="dance-role dance-role--split" aria-labelledby="choreographer-heading">
+          <div class="dance-role__split">
+            <figure class="dance-role__figure">
+              <img
+                src="images/canva-choreo.png"
+                alt="Alessia Obinu in a kneeling pose in a long dark skirt, dramatic side light."
+                width="800"
+                height="1200"
+                loading="lazy"
+              />
+            </figure>
+            <div class="dance-role__body dance-role__body--credits">
+                <p>2026: “Umbral” the participants of the Intensive Workshop on Contemporary Dance, Barcelona, Spain</p>
+                <p>2026: “Soucis” for Irina Barthes, Barcelona, Spain</p>
+                <p>2025: “A-STRATI” with Chiara Mesiani and Federica Franzini, Brussels, Belgium.</p>
+                <p>2025: “SOIDICIUS” Barcelona, Spain.</p>
+                <p>2025: “Arpz Love” video clip for Joselito Ke, Barcelona, Spain.</p>
+                <p>2025: “Look How Empty I Am” created for Chiara Mesiani, Brussels, Belgium.</p>
+                <p>2024: “28” dance video for Darwin Bullé, Madrid, Spain.</p>
+            </div>
           </div>
-        </article>
-        <article class="catalogue-card">
-          <div class="catalogue-card__image">Image / video still</div>
-          <div class="catalogue-card__body">
-            <h2>Class or intensive</h2>
-            <p>What you taught · Level · City.</p>
+        </section>
+
+        <div class="dance-section-bar">
+          <p class="dance-section-bar__label">/teacher/</p>
+        </div>
+
+        <section id="teacher" class="dance-role dance-role--split" aria-labelledby="teacher-heading">
+          <div class="dance-role__split">
+            <figure class="dance-role__figure">
+              <img
+                src="images/dance-teacher.png"
+                alt="Two dancers in red light against black, arms expressive in a theatrical duet."
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+            </figure>
+            <div class="dance-role__body dance-role__body--credits">
+              <p>2025-present: Contemporary teacher at Centre Civic Teixonera (Barcelona) and Scuola Milene (Italy)</p>
+              <p>2026: Workshop Conecta Y Fluye (Brussels)</p>
+              <p>2026: Workshop Abstract Moves (Perugia, Italy)</p>
+              <p>2026: Workshop Abstract Moves at Centre Civic La Teixonera (Barcelona)</p>
+              <p>2024: Workshop Abstract Moves at Centre Civic La Sedeta, Festival TUDANZAS and Calapanarra (Barcelona)</p>
+              <p>2023: Workshop Automansaje y estiramiento (TACCbcn, Barcelona)</p>
+              <p>2023: Contemporary teacher at Dancescape (Lleida-Barcelona)</p>
+              <p>2022: contemporary teacher for the workshop at Scuola Milene (OR Italy )</p>
+              <p>2020/2021: Ballet tecaher at Liberi Di School (MI Italy)</p>
+              <p>2019/2020: Ballet and modern dance teacher at ADS Maris Team (CR Italy)</p>
+            </div>
           </div>
-        </article>
+        </section>
       </div>
     </main>
 
@@ -88,6 +145,11 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll(".site-nav__dropdown[open]").forEach(function (dropdown) {
+          if (!dropdown.contains(e.target)) dropdown.removeAttribute("open");
+        });
+      });
     </script>
   </body>
 </html>

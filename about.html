@@ -7,20 +7,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-about">
     <header class="site-header">
       <a class="site-logo" href="index.html">Alessia Obinu</a>
       <div class="site-header__tools">
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html" aria-current="page">About</a>
-          <a href="index.html#paintings">Paintings</a>
-          <a href="index.html#dance">Dance</a>
-          <a href="index.html#jewelry">Handmade jewelry</a>
+          <details class="site-nav__dropdown">
+            <summary class="site-nav__dropdown-trigger">Work</summary>
+            <ul class="site-nav__menu" role="list">
+              <li><a href="dance2.html">Dance</a></li>
+              <li><a href="paintings.html">Paintings</a></li>
+              <li><a href="jewelry.html">Jewelry</a></li>
+            </ul>
+          </details>
+          <a href="collaborations.html">Collaborations</a>
           <a href="index.html#contact">Contact</a>
         </nav>
         <a
@@ -55,10 +61,8 @@
               <p class="hero__roles">Dancer • Choreographer • Visual Artist • Jewellery Designer</p>
             </div>
             <div class="about-page__hero-bio">
-              <p>
-                Born in Sardinia in 1997, currently based in Barcelona. I am a professional contemporary dancer,
-                choreographer, teacher, and painter.
-              </p>
+              <p>Born in Sardinia in 1997, currently based in Barcelona.</p>
+              <p>I am a professional contemporary dancer, choreographer, teacher, and painter.</p>
               <p>
                 Dance has accompanied me since childhood: I began dancing at the age of six. Since then, I have
                 considered myself a deeply creative person, and all the experiences I have lived have shaped who I am
@@ -66,13 +70,13 @@
               </p>
               <p>
                 Creating is what I love to do. My work in dance and painting stems from an expressive urgency: the need
-                to give form—through a physical, visual, and living language—to thoughts, emotions, and memories
+                to give form, through a physical, visual, and living language, to thoughts, emotions, and memories
                 connected to the way we inhabit society.
               </p>
               <p>
                 Through imagination, I am able to shape what is intangible, making it perceptible. I am fascinated by
-                the idea of translating invisible experiences—meditative states, spiritual dimensions, deep
-                sensations—onto the canvas as well as into the body. What belongs to the mind, what cannot be seen,
+                the idea of translating invisible experiences, meditative states, spiritual dimensions, deep
+                sensations, into the canvas as well as into the body. What belongs to the mind, what cannot be seen,
                 through art can become presence; it can be shared and transformed into a sensitive and collective
                 experience.
               </p>
@@ -93,6 +97,11 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll(".site-nav__dropdown[open]").forEach(function (dropdown) {
+          if (!dropdown.contains(e.target)) dropdown.removeAttribute("open");
+        });
+      });
     </script>
   </body>
 </html>

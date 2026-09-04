@@ -7,20 +7,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
+  <body class="page-paintings">
     <header class="site-header">
       <a class="site-logo" href="index.html">Alessia Obinu</a>
       <div class="site-header__tools">
         <nav class="site-nav" aria-label="Primary">
           <a href="about.html">About</a>
-          <a href="index.html#paintings">Paintings</a>
-          <a href="index.html#dance">Dance</a>
-          <a href="index.html#jewelry">Handmade jewelry</a>
+          <details class="site-nav__dropdown">
+            <summary class="site-nav__dropdown-trigger">Work</summary>
+            <ul class="site-nav__menu" role="list">
+              <li><a href="dance2.html">Dance</a></li>
+              <li><a href="paintings.html" aria-current="page">Paintings</a></li>
+              <li><a href="jewelry.html">Jewelry</a></li>
+            </ul>
+          </details>
+          <a href="collaborations.html">Collaborations</a>
           <a href="index.html#contact">Contact</a>
         </nav>
         <a
@@ -39,56 +45,156 @@
       </div>
     </header>
 
-    <main class="catalogue-main">
-      <div class="back-row">
-        <a class="back-link" href="index.html#paintings">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          Back to home
-        </a>
-      </div>
-
-      <header class="catalogue-header">
-        <h1>Paintings</h1>
+    <main class="catalogue-main paintings-page">
+      <section class="paintings-page__intro-section" aria-label="Artist statement">
+        <div class="paintings-page__intro">
         <p>
-          Add your real images by replacing each card’s placeholder: use an
-          <code>&lt;img&gt;</code> inside <code>.catalogue-card__image</code>, or
-          set a <code>background-image</code> in CSS. Duplicate a
-          <code>.catalogue-card</code> block for each work.
+          A self-taught artist, she has always been deeply connected to art, a passion that has accompanied her since
+          childhood.
         </p>
-      </header>
+        <p>
+          Her first works took shape on simple white sheets of paper, using only a black pen. Guided by the desire to
+          fill the space with lines and shapes that emerged from improvisation, she created without a precise
+          outline—an instinctive and liberating gesture.
+        </p>
+        <p>
+          Over time, she felt the opposite need: to remove, to simplify, to leave space for emptiness. This led her to
+          explore acrylic painting, a medium with which she began to reshape her visual language. Her current style
+          leans toward surrealism, driven by the desire to convey something beyond the image and reality, exploring
+          sensations, emotions, dreams, and other dimensions.
+        </p>
+        <p>
+          In January 2025, she held her first exhibition, BEYOND REALITY, at Sala Basiana in Barcelona. That same year,
+          she was an artist in residence at Artquemy Gallery in Barcelona, an experience that added new depth to her
+          artistic exploration, and she also took part in a collective exhibition at the same gallery. She was also one
+          of the selected artists in the collective exhibition &ldquo;DREAMS&rdquo; by Arteaporte, in Turin, July 2026.
+        </p>
+        <p>
+          She is currently collaborating with Claudia Reig Mart&iacute;n&rsquo;s Mythym project, creating illustrations
+          for her book.
+        </p>
+        </div>
+      </section>
 
-      <div class="catalogue-grid">
-        <article class="catalogue-card">
-          <div class="catalogue-card__image">Image placeholder</div>
-          <div class="catalogue-card__body">
-            <h2>Untitled study</h2>
-            <p>Oil on canvas · 2025 · Brief note on theme or size.</p>
+      <section class="paintings-page__gallery-section" aria-labelledby="paintings-gallery-heading">
+        <h2 class="paintings-page__heading" id="paintings-gallery-heading">/paintings/</h2>
+
+        <div class="paintings-gallery">
+        <article class="paintings-card">
+          <div class="paintings-card__image">
+            <button
+              type="button"
+              class="paintings-card__zoom"
+              data-full-src="images/overthinking.png"
+              aria-label="View Overthinking full size"
+            >
+              <img
+                src="images/overthinking.png"
+                alt="Overthinking — acrylic on canvas"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
           </div>
+          <p class="paintings-card__title">Overthinking</p>
+          <p class="paintings-card__detail">Acrylic on canvas</p>
+          <p class="paintings-card__detail">75x50</p>
+          <p class="paintings-card__detail">2026</p>
         </article>
-        <article class="catalogue-card">
-          <div class="catalogue-card__image">Image placeholder</div>
-          <div class="catalogue-card__body">
-            <h2>Series name — piece 2</h2>
-            <p>Acrylic · Dimensions · What drew you to this piece.</p>
+
+        <article class="paintings-card">
+          <div class="paintings-card__image">
+            <button
+              type="button"
+              class="paintings-card__zoom"
+              data-full-src="images/cuerpo.png"
+              aria-label="View Lo que sueña el cuerpo full size"
+            >
+              <img
+                src="images/cuerpo.png"
+                alt="Lo que sueña el cuerpo — acrylic on canvas"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
           </div>
+          <p class="paintings-card__title">Lo que sue&ntilde;a el cuerpo</p>
+          <p class="paintings-card__detail">Acrylic on canvas</p>
+          <p class="paintings-card__detail">75x50</p>
+          <p class="paintings-card__detail">2025</p>
         </article>
-        <article class="catalogue-card">
-          <div class="catalogue-card__image">Image placeholder</div>
-          <div class="catalogue-card__body">
-            <h2>Landscape / portrait</h2>
-            <p>Medium · Year · Optional link to prints or availability.</p>
+
+        <article class="paintings-card">
+          <div class="paintings-card__image">
+            <button
+              type="button"
+              class="paintings-card__zoom"
+              data-full-src="images/viaje.png"
+              aria-label="View El viaje sagrado entre los Guardianes full size"
+            >
+              <img
+                src="images/viaje.png"
+                alt="El viaje sagrado entre los Guardianes — acrylic on canvas"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
           </div>
+          <p class="paintings-card__title">El viaje sagrado entre los Guardianes</p>
+          <p class="paintings-card__detail">Acrylic on canvas</p>
+          <p class="paintings-card__detail">81x54</p>
+          <p class="paintings-card__detail">2024</p>
         </article>
-      </div>
+        </div>
+      </section>
     </main>
+
+    <dialog class="paintings-lightbox" id="paintings-lightbox" aria-label="Enlarged painting view">
+      <button type="button" class="paintings-lightbox__close" aria-label="Close enlarged painting">
+        &times;
+      </button>
+      <img class="paintings-lightbox__image" src="" alt="" />
+    </dialog>
 
     <footer class="site-footer">
       <p>© <span id="year"></span> doinabity. All rights reserved.</p>
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll(".site-nav__dropdown[open]").forEach(function (dropdown) {
+          if (!dropdown.contains(e.target)) dropdown.removeAttribute("open");
+        });
+      });
+
+      (function () {
+        var lightbox = document.getElementById("paintings-lightbox");
+        if (!lightbox) return;
+
+        var lightboxImg = lightbox.querySelector(".paintings-lightbox__image");
+        var closeBtn = lightbox.querySelector(".paintings-lightbox__close");
+
+        document.querySelectorAll(".paintings-card__zoom").forEach(function (button) {
+          button.addEventListener("click", function () {
+            var img = button.querySelector("img");
+            lightboxImg.src = button.getAttribute("data-full-src") || img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.showModal();
+          });
+        });
+
+        closeBtn.addEventListener("click", function () {
+          lightbox.close();
+        });
+
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox) lightbox.close();
+        });
+
+        lightbox.addEventListener("close", function () {
+          lightboxImg.removeAttribute("src");
+        });
+      })();
     </script>
   </body>
 </html>

@@ -1,5 +1,7 @@
 /* Shared presentation + catalogue styles */
 
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
 :root {
   --bg: #faf8f5;
   --bg-alt: #f0ebe3;
@@ -12,6 +14,11 @@
   --font-body: "Outfit", system-ui, sans-serif;
   --space: clamp(1rem, 4vw, 2.5rem);
   --max: 72rem;
+  --header-offset: 4rem;
+  --font-sans-site: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --tracking-site: 0.04em;
+  --font-hero-bodoni: "Bodoni 72", "Bodoni 72 Oldstyle", "Bodoni 72 Smallcaps", Didot, "Bodoni MT", Georgia, serif;
+  --font-dance-baskerville: "Libre Baskerville", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, Georgia, serif;
 }
 
 *,
@@ -31,6 +38,173 @@ body {
   line-height: 1.6;
   color: var(--ink);
   background: var(--bg);
+}
+
+/* Dance catalogue page: grey canvas */
+body.page-dance {
+  background: #e6e6e8;
+  overflow-x: hidden;
+}
+
+body.page-dance,
+body.page-home,
+body.page-paintings,
+body.page-jewelry,
+body.page-collaborations {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.page-dance {
+  font-family: var(--font-sans-site);
+  font-weight: 300;
+  letter-spacing: var(--tracking-site);
+}
+
+body.page-home,
+body.page-about,
+body.page-paintings,
+body.page-jewelry {
+  --font-display: var(--font-dance-baskerville);
+  --font-body: var(--font-dance-baskerville);
+  font-family: var(--font-dance-baskerville);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+body.page-dance .site-footer,
+body.page-dance .site-footer p,
+body.page-dance .dance-role__title,
+body.page-dance .dance-role__body,
+body.page-dance .dance-role__body p,
+body.page-dance .dance-subnav a {
+  font-family: var(--font-sans-site);
+  font-weight: 300;
+  letter-spacing: var(--tracking-site);
+}
+
+body.page-dance h1,
+body.page-dance h2,
+body.page-dance .dance-section-bar__label,
+body.page-dance .dance-role__body h1 {
+  font-family: var(--font-dance-baskerville);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+body.page-home .site-footer,
+body.page-home .site-footer p,
+body.page-home .home-biography__text,
+body.page-home .work-block__content,
+body.page-home .contact-section,
+body.page-home .contact-form,
+body.page-home .contact-form label,
+body.page-home .contact-form input,
+body.page-home .contact-form textarea,
+body.page-home .btn,
+body.page-home h1,
+body.page-home h2,
+body.page-home h3,
+body.page-home h4,
+body.page-home h5,
+body.page-home h6,
+body.page-about .site-footer,
+body.page-about .site-footer p,
+body.page-about .about-page__hero-bio,
+body.page-about .about-page__hero-bio p,
+body.page-about .hero__tagline--solo,
+body.page-about .hero__roles,
+body.page-about h1,
+body.page-about h2,
+body.page-about h3,
+body.page-about h4,
+body.page-about h5,
+body.page-about h6,
+body.page-paintings .site-footer,
+body.page-paintings .site-footer p,
+body.page-paintings .paintings-page__intro,
+body.page-paintings .paintings-page__intro p,
+body.page-paintings .paintings-card__title,
+body.page-paintings .paintings-card__detail,
+body.page-jewelry .site-footer,
+body.page-jewelry .site-footer p,
+body.page-jewelry .jewelry-page__intro,
+body.page-jewelry .jewelry-page__intro p,
+body.page-jewelry .jewelry-card__title,
+body.page-jewelry .jewelry-card__detail,
+body.page-jewelry h2,
+body.page-jewelry h3,
+body.page-jewelry h4,
+body.page-jewelry h5,
+body.page-jewelry h6 {
+  font-family: var(--font-dance-baskerville);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+body.page-home .site-header .site-logo,
+body.page-about .site-header .site-logo,
+body.page-paintings .site-header .site-logo,
+body.page-jewelry .site-header .site-logo {
+  font-family: var(--font-dance-baskerville);
+}
+
+body.page-home .home-biography__title,
+body.page-home .work-block__content h2,
+body.page-home .contact-section h2 {
+  letter-spacing: 0.05em;
+}
+
+body.page-dance .dance-subnav a {
+  letter-spacing: 0.08em;
+}
+
+body.page-dance .dance-role__body h1 {
+  letter-spacing: 0.05em;
+}
+
+/* Headings: match dance2 section labels (Libre Baskerville) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.home-biography__title,
+.work-block__content h2,
+.contact-section h2,
+.catalogue-header h1,
+.catalogue-card__body h2,
+.dance-section-bar__label,
+.dance2-section-nav__link,
+.dance-role__title,
+.dance-role__body h1 {
+  font-family: var(--font-dance-baskerville);
+}
+
+body.page-dance2,
+body.page-dance2 .site-footer,
+body.page-dance2 .site-footer p {
+  font-family: var(--font-sans-site);
+  font-weight: 300;
+  letter-spacing: var(--tracking-site);
+}
+
+body.page-dance2 .dance2-section-nav__link,
+body.page-dance2 .dance-role__body,
+body.page-dance2 .dance-role__body p,
+body.page-dance2 h1,
+body.page-dance2 h2,
+body.page-dance2 h3,
+body.page-dance2 h4,
+body.page-dance2 h5,
+body.page-dance2 h6 {
+  font-family: var(--font-dance-baskerville);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+body.page-dance2 .dance2-section-nav__link {
+  font-style: italic;
 }
 
 img {
@@ -154,7 +328,7 @@ a:hover {
 .site-logo {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.02em;
   color: var(--ink);
   text-decoration: none;
@@ -166,7 +340,12 @@ a:hover {
 }
 
 .site-header .site-logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: #f2f1ee;
+  text-decoration: none;
 }
 
 .site-header .site-logo:hover {
@@ -176,9 +355,19 @@ a:hover {
 
 .site-nav {
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.site-header .site-nav a,
+.site-header .site-nav__dropdown-trigger,
+.site-header .site-nav__menu a {
+  font-family: var(--font-sans-site);
+  font-weight: 300;
+  letter-spacing: var(--tracking-site);
+  font-size: 0.9rem;
 }
 
 .site-nav a {
@@ -204,10 +393,91 @@ a:hover {
 
 .site-header .site-nav a[aria-current="page"] {
   color: #faf8f5;
-  font-weight: 600;
+  font-weight: 300;
+}
+
+.site-nav__dropdown {
+  position: relative;
+}
+
+.site-nav__dropdown-trigger {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  user-select: none;
+}
+
+.site-nav__dropdown-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.site-nav__dropdown-trigger::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.4em;
+  width: 0.35em;
+  height: 0.35em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-0.1em);
+  opacity: 0.75;
+  vertical-align: middle;
+}
+
+.site-nav__dropdown[open] .site-nav__dropdown-trigger::after {
+  transform: rotate(-135deg) translateY(-0.05em);
+}
+
+.site-header .site-nav__dropdown-trigger {
+  color: rgba(242, 241, 238, 0.72);
+}
+
+.site-header .site-nav__dropdown-trigger:hover,
+.site-nav__dropdown[open] .site-nav__dropdown-trigger {
+  color: #faf8f5;
+}
+
+.site-nav__menu {
+  position: absolute;
+  top: calc(100% + 0.65rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 11rem;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  background: rgba(42, 42, 44, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+  z-index: 110;
+}
+
+.site-nav__menu li {
+  margin: 0;
+}
+
+.site-nav__menu a {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.site-header .site-nav__menu a {
+  color: rgba(242, 241, 238, 0.85);
+}
+
+.site-header .site-nav__menu a:hover {
+  color: #faf8f5;
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
 }
 
 #about,
+#biography,
 #work,
 #paintings,
 #dance,
@@ -216,9 +486,19 @@ a:hover {
   scroll-margin-top: 5rem;
 }
 
+body.page-home #about,
+body.page-home #biography,
+body.page-home #work,
+body.page-home #paintings,
+body.page-home #dance,
+body.page-home #jewelry,
+body.page-home #contact {
+  scroll-margin-top: 0;
+}
+
 /* ——— Home hero ——— */
 main {
-  padding-top: 4rem;
+  padding-top: var(--header-offset);
 }
 
 .hero {
@@ -306,15 +586,22 @@ main {
 }
 
 /* About page only: ¼ portrait (left) + ¾ existing hero photo + text (right) */
+.about-page {
+  min-height: calc(100dvh - var(--header-offset));
+}
+
 .about-page .hero--split.about-page__hero--cols {
+  --about-image-ratio: 0.35;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  grid-template-columns: minmax(0, calc(var(--about-image-ratio) * 100%)) minmax(0, 1fr);
   align-items: stretch;
-  min-height: 88vh;
+  min-height: calc(100dvh - var(--header-offset));
+  height: calc(100dvh - var(--header-offset));
 }
 
 .about-page .hero--split.about-page__hero--cols .hero__pane--quarter {
-  min-height: 12rem;
+  min-height: 100%;
+  height: 100%;
   background-color: var(--bg-alt);
   background-image: url("../images/about-page-portrait.png?v=1");
   background-size: cover;
@@ -324,7 +611,8 @@ main {
 
 .about-page .hero--split.about-page__hero--cols .hero__pane--main {
   width: auto;
-  min-height: 88vh;
+  min-height: 100%;
+  height: 100%;
   align-items: flex-start;
   justify-content: flex-start;
   overflow-y: auto;
@@ -342,25 +630,31 @@ main {
 @media (max-width: 768px) {
   .about-page .hero--split.about-page__hero--cols {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(22vh, 200px) minmax(60vh, auto);
-    min-height: auto;
+    grid-template-rows: minmax(28vh, 240px) minmax(0, 1fr);
+    min-height: calc(100dvh - var(--header-offset));
+    height: calc(100dvh - var(--header-offset));
   }
 
   .about-page .hero--split.about-page__hero--cols .hero__pane--quarter {
-    min-height: 25vh;
+    min-height: 28vh;
+    height: auto;
     background-size: auto 200%;
     background-position: center top;
   }
 
   .about-page .hero--split.about-page__hero--cols .hero__pane--main {
-    min-height: min(70vh, 36rem);
+    min-height: 0;
+    height: auto;
+  }
+
+  .about-page .hero__inner--about-main.hero__inner--solo {
+    transform: none;
   }
 }
 
 .hero h1 {
-  font-family: var(--font-display);
   font-size: clamp(2.5rem, 8vw, 4.25rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.1;
   margin: 0 0 1rem;
   letter-spacing: -0.02em;
@@ -405,6 +699,7 @@ main {
   margin-right: 0;
   padding: clamp(1.25rem, 3vw, 2rem);
   box-sizing: border-box;
+  transform: translateX(calc((0.125 - var(--about-image-ratio) / 2) * 100vw));
 }
 
 .about-page .hero__inner--about-main .hero__intro {
@@ -412,18 +707,28 @@ main {
   margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
+.about-page .hero__inner--about-main .hero__intro h1,
+.about-page .hero__inner--about-main .hero__intro .hero__tagline--solo,
+.about-page .hero__inner--about-main .hero__intro .hero__roles {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
 .about-page .hero__inner--about-main .hero__intro h1 {
   font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 400;
 }
 
 .about-page .hero__inner--about-main .hero__intro .hero__tagline--solo {
   margin-top: 0.35em;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 500;
 }
 
 .about-page .hero__inner--about-main .hero__intro .hero__roles {
   margin-top: 0.85rem;
   font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+  font-weight: 500;
 }
 
 .about-page .about-page__hero-bio {
@@ -432,10 +737,16 @@ main {
   text-align: left;
 }
 
+.about-page .about-page__hero-bio,
+.about-page .about-page__hero-bio p {
+  font-family: var(--font-dance-baskerville);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 .about-page .about-page__hero-bio p {
   margin: 0 0 1.1em;
-  font-family: var(--font-body);
-  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.86rem, 1.05vw, 0.94rem);
   line-height: 1.65;
   color: var(--ink);
 }
@@ -486,6 +797,305 @@ main {
   }
   50% {
     transform: translateY(4px);
+  }
+}
+
+/* ——— Home biography (between hero and work) ——— */
+.home-biography {
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.home-biography__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.home-biography__portrait {
+  background: var(--bg-alt);
+  min-height: 280px;
+}
+
+.home-biography__portrait img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.home-biography__content {
+  padding: clamp(2rem, 5vw, 3.25rem) var(--space);
+}
+
+.home-biography__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 400;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.01em;
+}
+
+.home-biography__text {
+  max-width: 42rem;
+}
+
+.home-biography__text p {
+  margin: 0 0 1.1em;
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.home-biography__text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .home-biography__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: stretch;
+  }
+
+  .home-biography__portrait {
+    min-height: min(70vh, 42rem);
+  }
+}
+
+/* Home: full-viewport sections */
+html:has(body.page-home) {
+  scroll-snap-type: y mandatory;
+}
+
+.page-home .hero__pane--main,
+.page-home .hero__pane--main h1,
+.page-home .hero__pane--main .hero__tagline--solo,
+.page-home .hero__pane--main .hero__roles {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.page-home .hero__pane--main .hero__tagline--solo {
+  font-weight: 500;
+}
+
+.page-home .hero__pane--main .hero__roles {
+  font-weight: 500;
+}
+
+body.page-home > main {
+  padding-top: 0;
+}
+
+.page-home .work-sections {
+  display: contents;
+  border: none;
+}
+
+.page-home .hero--split,
+.page-home .home-biography,
+.page-home .work-block,
+.page-home .contact-section {
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  flex-shrink: 0;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.page-home .hero--split {
+  min-height: 100dvh;
+}
+
+.page-home .hero--split .hero__pane--main {
+  height: 100%;
+  min-height: unset;
+  max-height: none;
+}
+
+.page-home .home-biography {
+  display: flex;
+  flex-direction: column;
+  border-top: none;
+  background: #101010;
+  padding-inline: clamp(1.5rem, 5vw, 3.5rem);
+  box-sizing: border-box;
+}
+
+.page-home .home-biography__grid {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+}
+
+.page-home .home-biography__portrait {
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #101010;
+}
+
+.page-home .home-biography__portrait img {
+  height: 100%;
+  min-height: 0;
+}
+
+.page-home .home-biography__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: clamp(2rem, 5vw, 3.25rem) clamp(1.5rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+.page-home .home-biography__text {
+  max-width: 42rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.page-home .home-biography__title {
+  color: #f2f1ee;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.page-home .home-biography__text,
+.page-home .home-biography__text p {
+  font-family: var(--font-dance-baskerville);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.page-home .home-biography__text p {
+  color: rgba(242, 241, 238, 0.88);
+  font-size: clamp(0.86rem, 1.05vw, 0.94rem);
+  line-height: 1.65;
+}
+
+.page-home .work-block {
+  border-bottom: none;
+  background: #101010;
+  min-height: 100dvh;
+}
+
+.page-home .work-block__visual,
+.page-home .work-block--jewelry .work-block__visual {
+  min-height: 0;
+  height: 100%;
+  background: #101010;
+}
+
+.page-home .work-block__content h2 {
+  color: #f2f1ee;
+}
+
+.page-home .work-block__content p {
+  color: rgba(242, 241, 238, 0.88);
+}
+
+.page-home .work-block .btn {
+  color: #101010;
+  background: #f2f1ee;
+}
+
+.page-home .work-block .btn:hover {
+  background: var(--accent-soft);
+  color: #101010;
+}
+
+.page-home .contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: none;
+  background: #101010;
+}
+
+.page-home .contact-section h2 {
+  color: #f2f1ee;
+}
+
+.page-home .contact-section__lead {
+  color: rgba(242, 241, 238, 0.88);
+}
+
+.page-home .contact-section__lead a {
+  color: var(--accent-soft);
+}
+
+.page-home .contact-section__notice {
+  color: rgba(242, 241, 238, 0.88);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.page-home .contact-form__field label {
+  color: #f2f1ee;
+}
+
+.page-home .contact-form__field input,
+.page-home .contact-form__field textarea {
+  color: #f2f1ee;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-home .contact-form__field input:focus,
+.page-home .contact-form__field textarea:focus {
+  border-color: rgba(196, 164, 132, 0.45);
+  box-shadow: 0 0 0 3px rgba(196, 164, 132, 0.12);
+}
+
+.page-home .contact-section .btn {
+  color: #101010;
+  background: #f2f1ee;
+}
+
+.page-home .contact-section .btn:hover {
+  background: var(--accent-soft);
+  color: #101010;
+}
+
+.page-home .contact-section__inner {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .page-home .hero--split,
+  .page-home .hero__pane--main {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+
+  .page-home .home-biography__grid {
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1.35fr);
+    height: 100%;
   }
 }
 
@@ -635,11 +1245,10 @@ main {
 }
 
 .work-block__content h2 {
-  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 500;
+  font-weight: 400;
   margin: 0 0 0.75rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
 .work-block__content p {
@@ -689,11 +1298,10 @@ main {
 }
 
 .contact-section h2 {
-  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 500;
+  font-weight: 400;
   margin: 0 0 0.75rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.01em;
 }
 
 .contact-section__lead {
@@ -888,10 +1496,10 @@ main {
 }
 
 .catalogue-header h1 {
-  font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 500;
+  font-weight: 400;
   margin: 0 0 0.75rem;
+  letter-spacing: 0.01em;
 }
 
 .catalogue-header p {
@@ -947,9 +1555,8 @@ main {
 }
 
 .catalogue-card__body h2 {
-  font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0 0 0.35rem;
 }
 
@@ -957,4 +1564,830 @@ main {
   font-size: 0.92rem;
   color: var(--ink-muted);
   margin: 0;
+}
+
+/* ——— Paintings & jewelry pages ——— */
+body.page-paintings,
+body.page-jewelry {
+  background: #101010;
+  color: #f2f1ee;
+  min-height: 100dvh;
+}
+
+body.page-paintings .catalogue-main.paintings-page,
+body.page-jewelry .catalogue-main.jewelry-page {
+  max-width: var(--max);
+  padding: calc(var(--header-offset) + clamp(2rem, 5vw, 3.5rem)) clamp(1.5rem, 5vw, 3.5rem)
+    clamp(3rem, 6vw, 4.5rem);
+}
+
+body.page-paintings .site-footer,
+body.page-jewelry .site-footer {
+  border-top-color: rgba(255, 255, 255, 0.12);
+  color: rgba(242, 241, 238, 0.55);
+  background: #101010;
+}
+
+body.page-paintings .site-header .site-nav a[aria-current="page"],
+body.page-jewelry .site-header .site-nav a[aria-current="page"] {
+  color: #faf8f5;
+}
+
+.paintings-page__intro-section,
+.jewelry-page__intro-section {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.paintings-page__intro,
+.jewelry-page__intro {
+  margin: 0;
+}
+
+.paintings-page__intro p,
+.jewelry-page__intro p {
+  margin: 0 0 1.1em;
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(0.86rem, 1.05vw, 0.94rem);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: rgba(242, 241, 238, 0.88);
+}
+
+.paintings-page__intro p:last-child,
+.jewelry-page__intro p:last-child {
+  margin-bottom: 0;
+}
+
+.paintings-page__gallery-section,
+.jewelry-page__gallery-section {
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+  padding-top: clamp(2.5rem, 5vw, 3.25rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.page-paintings .paintings-page__heading,
+body.page-jewelry .jewelry-page__heading {
+  margin: 0 0 clamp(2rem, 5vw, 2.75rem);
+  text-align: center;
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(242, 241, 238, 0.5);
+}
+
+.paintings-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(5, auto);
+  gap: 0 clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.paintings-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 5;
+  gap: 0.35rem 0;
+  text-align: center;
+}
+
+.paintings-card__image {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 20rem;
+  margin-bottom: 0.5rem;
+}
+
+.paintings-card__zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  transition: opacity 0.2s ease;
+}
+
+.paintings-card__zoom:hover {
+  opacity: 0.9;
+}
+
+.paintings-card__zoom:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+}
+
+.paintings-card__image img {
+  width: 100%;
+  height: auto;
+  max-height: 22rem;
+  object-fit: contain;
+  object-position: center;
+  margin-inline: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.35));
+}
+
+.paintings-lightbox {
+  width: min(96vw, 72rem);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.paintings-lightbox::backdrop {
+  background: rgba(16, 16, 16, 0.94);
+}
+
+.paintings-lightbox__image {
+  display: block;
+  width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.paintings-lightbox__close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: none;
+  border-radius: 999px;
+  background: #f2f1ee;
+  color: #101010;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.paintings-lightbox__close:hover {
+  background: var(--accent-soft);
+}
+
+.paintings-card__title,
+.paintings-card__detail {
+  margin: 0;
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(0.82rem, 1vw, 0.9rem);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: rgba(242, 241, 238, 0.72);
+  text-align: center;
+}
+
+body.page-paintings .paintings-card__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #f2f1ee;
+  min-height: 2.9em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .paintings-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 2.5rem;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+
+  .paintings-card {
+    display: block;
+    grid-row: auto;
+  }
+
+  .paintings-card__image {
+    min-height: 0;
+    margin-bottom: 0.85rem;
+  }
+
+  body.page-paintings .paintings-card__title {
+    min-height: 0;
+    display: block;
+  }
+
+  .jewelry-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 2.5rem;
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+
+  .jewelry-card {
+    display: block;
+    grid-row: auto;
+  }
+
+  .jewelry-card__image {
+    min-height: 0;
+    margin-bottom: 0.85rem;
+  }
+
+  body.page-jewelry .jewelry-card__title {
+    min-height: 0;
+    display: block;
+  }
+}
+
+.jewelry-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, auto);
+  gap: 0 clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.jewelry-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  gap: 0.35rem 0;
+  text-align: center;
+}
+
+.jewelry-card__image {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 20rem;
+  margin-bottom: 0.5rem;
+}
+
+.jewelry-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 16rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(242, 241, 238, 0.45);
+  font-family: var(--font-dance-baskerville);
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+.jewelry-card__title,
+.jewelry-card__detail {
+  margin: 0;
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(0.82rem, 1vw, 0.9rem);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: rgba(242, 241, 238, 0.72);
+  text-align: center;
+}
+
+body.page-jewelry .jewelry-card__title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #f2f1ee;
+  min-height: 2.9em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* ——— Collaborations page ——— */
+body.page-collaborations {
+  background: #101010;
+  color: #f2f1ee;
+  min-height: 100dvh;
+}
+
+body.page-collaborations .catalogue-main.collaborations-page {
+  max-width: var(--max);
+  padding: calc(var(--header-offset) + clamp(2rem, 5vw, 3.5rem)) clamp(1.5rem, 5vw, 3.5rem)
+    clamp(3rem, 6vw, 4.5rem);
+  min-height: calc(100dvh - var(--header-offset) - 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.page-collaborations .site-footer {
+  border-top-color: rgba(255, 255, 255, 0.12);
+  color: rgba(242, 241, 238, 0.55);
+  background: #101010;
+}
+
+body.page-collaborations .site-header .site-nav a[aria-current="page"] {
+  color: #faf8f5;
+}
+
+.collaborations-page__content {
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.collaborations-page__heading {
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(242, 241, 238, 0.5);
+}
+
+.collaborations-page__lead {
+  margin: 0 0 clamp(1.25rem, 3vw, 1.75rem);
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(0.86rem, 1.05vw, 0.94rem);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  color: rgba(242, 241, 238, 0.88);
+}
+
+.collaborations-page__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collaborations-page__list li {
+  margin: 0 0 0.35em;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #f2f1ee;
+}
+
+.collaborations-page__list li:last-child {
+  margin-bottom: 0;
+}
+
+/* ——— Dance page: Dancer / Choreographer / Teacher ——— */
+.dance-page.catalogue-main {
+  max-width: none;
+  padding-top: var(--header-offset);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dance-section-bar {
+  background: rgba(42, 42, 44, 0.94);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.7rem var(--space);
+  text-align: center;
+}
+
+.dance-section-bar__label {
+  margin: 0;
+  font-family: var(--font-sans-site);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: rgba(242, 241, 238, 0.88);
+}
+
+.dance-section-bar:first-child {
+  border-top: none;
+}
+
+.dance-subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding: 0 var(--space) 2rem;
+  margin: 0 0 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.dance-subnav a {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dance-subnav a:hover {
+  color: var(--accent);
+}
+
+.dance-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+}
+
+.dance-page .dance-roles {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dance-role {
+  scroll-margin-top: 5.5rem;
+  padding-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.dance-role__title {
+  font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+  font-weight: 300;
+  margin: 0 0 1rem;
+  letter-spacing: 0.05em;
+}
+
+.dance-role__figure {
+  margin: 0 0 1.1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-alt);
+}
+
+.dance-role__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.dance-role__body {
+  max-width: 40em;
+}
+
+.dance-role__body p {
+  margin: 0 0 0.65em;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+.dance-role__body p:last-child {
+  margin-bottom: 0;
+}
+
+.dance-role__body h1 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  margin: 0 0 1rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+.dance-role__body--credits {
+  max-width: none;
+}
+
+.page-dance .dance-role__body--credits p {
+  font-size: clamp(1.05rem, 1.2vw, 1.18rem);
+  line-height: 1.85;
+  margin-bottom: 0.9em;
+}
+
+.dance-page .dance-role--split {
+  padding-left: clamp(0.75rem, 2.5vw, 1.75rem);
+  padding-right: clamp(2rem, 7vw, 4.5rem);
+}
+
+/* Image left, credits right */
+.dance-role--split .dance-role__split {
+  display: grid;
+  grid-template-columns: minmax(0, 36vw) minmax(0, 1fr);
+  column-gap: clamp(2rem, 5vw, 3.25rem);
+  align-items: start;
+  width: 100%;
+  max-width: min(90rem, 100%);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.dance-role--split .dance-role__split .dance-role__figure {
+  margin-bottom: 0;
+  margin-left: 0;
+  border-radius: 8px;
+  max-height: min(92vh, 58rem);
+  overflow: hidden;
+  border: none;
+  background: var(--bg-alt);
+}
+
+.dance-role--split .dance-role__split .dance-role__figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: min(72vh, 40rem);
+  max-height: min(92vh, 58rem);
+  object-fit: cover;
+  object-position: left top;
+}
+
+.dance-role--split .dance-role__split .dance-role__body {
+  max-width: none;
+  padding-top: 0.15rem;
+  padding-right: 0.25rem;
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+.dance-role--split .dance-role__split .dance-role__body p {
+  text-align: left;
+}
+
+/* Dancer: vertically center credits beside the image */
+#dancer.dance-role--split .dance-role__split {
+  align-items: center;
+}
+
+#dancer.dance-role--split .dance-role__split .dance-role__body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .dance-page .dance-role--split {
+    padding-left: var(--space);
+    padding-right: var(--space);
+  }
+
+  .dance-role--split .dance-role__split {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .dance-role--split .dance-role__split .dance-role__figure img {
+    min-height: 0;
+    max-height: none;
+    height: auto;
+  }
+}
+
+/* dance2.html: full-screen sections, side text panels */
+html:has(body.page-dance2) {
+  scroll-snap-type: y mandatory;
+}
+
+body.page-dance2 > main.dance-page {
+  padding-top: 0;
+}
+
+.page-dance2 .dance2-section-nav {
+  position: fixed;
+  top: var(--header-offset);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 3vw, 2rem);
+  padding: 0.65rem var(--space);
+  background: transparent;
+  border-bottom: none;
+}
+
+.page-dance2 .dance2-section-nav__link {
+  font-family: var(--font-dance-baskerville);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: rgba(242, 241, 238, 0.5);
+  text-decoration: none;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  transition: color 0.2s;
+}
+
+.page-dance2 .dance2-section-nav__link:hover {
+  color: rgba(242, 241, 238, 0.82);
+  text-decoration: none;
+}
+
+.page-dance2 .dance2-section-nav__link[aria-current="true"] {
+  color: rgba(242, 241, 238, 0.95);
+}
+
+/* Dancer: marble studio greys with soft violet shadow */
+.page-dance2 .dance-role-unit--dancer {
+  background: #b8b3b0;
+}
+
+.page-dance2 .dance-role-unit--dancer .dance-role__split {
+  background: #b8b3b0;
+}
+
+/* Choreographer: deep burgundy / black stage light */
+.page-dance2 .dance-role-unit--choreographer {
+  background: #1f1416;
+}
+
+.page-dance2 .dance-role-unit--choreographer .dance-role__split {
+  background: #1f1416;
+}
+
+/* Teacher: warm dark studio wood */
+.page-dance2 .dance-role-unit--teacher {
+  background: #3a322c;
+}
+
+.page-dance2 .dance-role-unit--teacher .dance-role__split {
+  background: #3a322c;
+}
+
+.page-dance2 .dance-page .dance-role--overlay {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page-dance2 .dance-roles {
+  gap: 0;
+}
+
+.page-dance2 .dance-role-unit {
+  position: relative;
+  min-height: 100dvh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin: 0;
+}
+
+.page-dance2 .dance-role--overlay {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+  scroll-margin-top: 0;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__split {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  gap: 0;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__figure {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  height: 100%;
+  max-height: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__body {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  flex: 0 0 min(44%, 30rem);
+  width: min(44%, 30rem);
+  margin: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 2.2vw, 1.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  max-width: none;
+  max-height: 100%;
+  text-align: left;
+  line-height: 1.42;
+}
+
+.page-dance2 .dance-role__split--panel-right .dance-role__body {
+  right: auto;
+  left: auto;
+}
+
+.page-dance2 .dance-role__split--panel-left .dance-role__body {
+  order: -1;
+  left: auto;
+  right: auto;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__body p {
+  color: rgba(242, 241, 238, 0.93);
+  font-size: clamp(0.82rem, 1.02vw, 0.96rem);
+  line-height: 1.75;
+  margin: 0 0 0.88em;
+  text-align: left;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__body p em {
+  font-style: italic;
+}
+
+.page-dance2 .dance-role--overlay .dance-role__body p:last-child {
+  margin-bottom: 0;
+}
+
+.page-dance2 #dancer .dance-role__body p {
+  font-size: clamp(0.72rem, 0.96vw, 0.82rem);
+  line-height: 1.47;
+  margin-bottom: 0.66em;
+}
+
+.page-dance2 .dance-role__body--credits > p:first-child {
+  margin-top: 3lh;
+}
+
+.page-dance2 .dance-role-unit--dancer .dance-role__body {
+  background: rgba(54, 48, 58, 0.9);
+  flex: 0 0 min(44%, 30rem);
+  width: min(44%, 30rem);
+  height: 100%;
+  max-height: 100%;
+  align-self: stretch;
+  justify-content: center;
+  padding-top: clamp(0.8rem, 1.8vw, 1.2rem);
+  padding-bottom: clamp(0.8rem, 1.8vw, 1.2rem);
+}
+
+.page-dance2 #dancer .dance-role__figure {
+  align-self: stretch;
+}
+
+.page-dance2 .dance-role-unit--choreographer .dance-role__body {
+  background: rgba(36, 18, 22, 0.94);
+}
+
+.page-dance2 .dance-role-unit--teacher .dance-role__body {
+  background: rgba(32, 27, 23, 0.94);
+}
+
+@media (max-width: 700px) {
+  .page-dance2 .dance-role--overlay .dance-role__split {
+    flex-direction: column;
+  }
+
+  .page-dance2 .dance-role--overlay .dance-role__figure {
+    flex: 1;
+    width: 100%;
+  }
+
+  .page-dance2 .dance-role--overlay .dance-role__body {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: none;
+  }
+
+  .page-dance2 .dance-role__split--panel-left .dance-role__body {
+    order: 2;
+  }
+
+  .page-dance2 #dancer .dance-role__body p {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    margin-bottom: 0.62em;
+  }
 }

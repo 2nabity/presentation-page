@@ -7,32 +7,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body>
-    <header class="site-header site-header--home">
+  <body class="page-home">
+    <header class="site-header">
       <a class="site-logo" href="index.html">Alessia Obinu</a>
-      <nav class="site-nav site-nav--center" aria-label="Page sections">
-        <a href="about.html">About</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a
-        class="site-header__instagram"
-        href="https://www.instagram.com/ale_obins/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram — @ale_obins"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-          <circle cx="12" cy="12" r="4" />
-          <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" stroke="none" />
-        </svg>
-      </a>
+      <div class="site-header__tools">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="about.html">About</a>
+          <details class="site-nav__dropdown">
+            <summary class="site-nav__dropdown-trigger">Work</summary>
+            <ul class="site-nav__menu" role="list">
+              <li><a href="dance2.html">Dance</a></li>
+              <li><a href="paintings.html">Paintings</a></li>
+              <li><a href="jewelry.html">Jewelry</a></li>
+            </ul>
+          </details>
+          <a href="collaborations.html">Collaborations</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a
+          class="site-header__instagram"
+          href="https://www.instagram.com/ale_obins/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram — @ale_obins"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
     </header>
 
     <main id="top">
@@ -51,13 +61,86 @@
         </div>
       </section>
 
+      <section id="biography" class="home-biography" aria-labelledby="biography-heading">
+        <div class="home-biography__grid">
+          <div class="home-biography__portrait">
+            <img
+              src="images/about-page-portrait.png"
+              alt="Portrait of Alessia Obinu"
+              width="600"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="home-biography__content">
+            <h2 id="biography-heading" class="home-biography__title">Biography</h2>
+            <div class="home-biography__text">
+              <p>Born in Sardinia in 1997, currently based in Barcelona.</p>
+              <p>I am a professional contemporary dancer, choreographer, teacher, and painter.</p>
+              <p>
+                Dance has accompanied me since childhood: I began dancing at the age of six. Since then, I have
+                considered myself a deeply creative person, and all the experiences I have lived have shaped who I am
+                today.
+              </p>
+              <p>
+                Creating is what I love to do. My work in dance and painting stems from an expressive urgency: the need
+                to give form, through a physical, visual, and living language, to thoughts, emotions, and memories
+                connected to the way we inhabit society.
+              </p>
+              <p>
+                Through imagination, I am able to shape what is intangible, making it perceptible. I am fascinated by
+                the idea of translating invisible experiences, meditative states, spiritual dimensions, deep
+                sensations, into the canvas as well as into the body. What belongs to the mind, what cannot be seen,
+                through art can become presence; it can be shared and transformed into a sensitive and collective
+                experience.
+              </p>
+              <p>
+                At the center of my research is the desire to ask questions, to open spaces for reflection, and to
+                explore what the human experience implies. For me, art has the power to generate dialogue, to question,
+                and to create connections.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div id="work" class="work-sections">
+
+        <section id="dance" class="work-block work-block--dance" aria-labelledby="dance-heading">
+          <div class="work-block__visual" aria-hidden="true">
+            <div class="work-block__visual-inner">
+              <img
+                class="work-block__photo"
+                src="images/dance-dancer.png"
+                alt="Alessia Obinu in a contemporary dance pose"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <div class="work-block__content">
+            <h2 id="dance-heading">Dance</h2>
+            <p>
+             <i>/Performances, choreography, classes./</i> 
+            </p>
+            <a class="btn" href="dance2.html">
+              Learn more
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+
+
+
         <section id="paintings" class="work-block work-block--paintings" aria-labelledby="paintings-heading">
           <div class="work-block__visual" aria-hidden="true">
             <div class="work-block__visual-inner">
               <img
                 class="work-block__photo"
-                src="images/work-paintings.png"
+                src="images/canva-painting.png"
                 alt=""
                 decoding="async"
               />
@@ -79,31 +162,7 @@
           </div>
         </section>
 
-        <section id="dance" class="work-block work-block--dance" aria-labelledby="dance-heading">
-          <div class="work-block__visual" aria-hidden="true">
-            <div class="work-block__visual-inner">
-              <img
-                class="work-block__photo"
-                src="images/work-dance.png"
-                alt=""
-                decoding="async"
-              />
-            </div>
-          </div>
-          <div class="work-block__content">
-            <h2 id="dance-heading">Dance</h2>
-            <p>
-              Performances, choreography, classes, or reels — however you
-              present movement, this section links to a dedicated gallery page.
-            </p>
-            <a class="btn" href="dance.html">
-              View catalogue
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </section>
+
 
         <section id="jewelry" class="work-block work-block--jewelry" aria-labelledby="jewelry-heading">
           <div class="work-block__visual" aria-hidden="true">
@@ -197,6 +256,11 @@
     </footer>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll(".site-nav__dropdown[open]").forEach(function (dropdown) {
+          if (!dropdown.contains(e.target)) dropdown.removeAttribute("open");
+        });
+      });
       (function () {
         var next = document.getElementById("contact-form-next");
         if (next) {
@@ -209,6 +273,111 @@
           if (note) note.hidden = false;
           window.history.replaceState(null, "", window.location.pathname + window.location.search);
         }
+      })();
+      (function () {
+        if (!document.body.classList.contains("page-home")) return;
+
+        var sections = Array.prototype.slice.call(
+          document.querySelectorAll(".hero--split, .home-biography, .work-block, .contact-section")
+        );
+        if (!sections.length) return;
+
+        var lock = false;
+        var lockMs = 900;
+
+        function scrollableParent(node) {
+          return node && node.closest(".home-biography__content, .contact-section__inner");
+        }
+
+        function canScrollDown(el) {
+          return el.scrollTop + el.clientHeight < el.scrollHeight - 2;
+        }
+
+        function canScrollUp(el) {
+          return el.scrollTop > 2;
+        }
+
+        function sectionTop(el) {
+          return window.scrollY + el.getBoundingClientRect().top;
+        }
+
+        function currentIndex() {
+          var best = 0;
+          var bestDist = Infinity;
+          sections.forEach(function (el, i) {
+            var dist = Math.abs(el.getBoundingClientRect().top);
+            if (dist < bestDist) {
+              bestDist = dist;
+              best = i;
+            }
+          });
+          return best;
+        }
+
+        function goTo(index) {
+          if (index < 0 || index >= sections.length || lock) return;
+          lock = true;
+          var top = sectionTop(sections[index]);
+          window.scrollTo({ top: top, behavior: "smooth" });
+          window.setTimeout(function () {
+            window.scrollTo({ top: top, behavior: "auto" });
+            lock = false;
+          }, lockMs);
+        }
+
+        function goToHashTarget(el) {
+          if (!el) return;
+          var i = sections.indexOf(el);
+          if (i >= 0) {
+            goTo(i);
+            return;
+          }
+          var firstBlock = el.querySelector && el.querySelector(".work-block");
+          if (firstBlock) {
+            goTo(sections.indexOf(firstBlock));
+            return;
+          }
+          window.scrollTo({ top: sectionTop(el), behavior: "smooth" });
+        }
+
+        document.querySelectorAll("body.page-home a[href^='#']").forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            var hash = link.getAttribute("href");
+            if (!hash || hash === "#") return;
+            var target = document.getElementById(hash.slice(1));
+            if (!target) return;
+            e.preventDefault();
+            goToHashTarget(target);
+          });
+        });
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (lock) {
+              e.preventDefault();
+              return;
+            }
+
+            if (Math.abs(e.deltaY) < 8) return;
+
+            var scrollEl = scrollableParent(e.target);
+            if (scrollEl) {
+              if (e.deltaY > 0 && canScrollDown(scrollEl)) return;
+              if (e.deltaY < 0 && canScrollUp(scrollEl)) return;
+            }
+
+            var i = currentIndex();
+            if (e.deltaY > 0 && i < sections.length - 1) {
+              e.preventDefault();
+              goTo(i + 1);
+            } else if (e.deltaY < 0 && i > 0) {
+              e.preventDefault();
+              goTo(i - 1);
+            }
+          },
+          { passive: false }
+        );
       })();
     </script>
   </body>
